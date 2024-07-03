@@ -3,17 +3,23 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 const Register = require("./models/form.js");
+const ejsMate = require("ejs-mate");
 
 let host = 3001;
 let MONGOOSE_URL = "mongodb://127.0.0.1:27017/hackathon";
 
+// Set up EJS as the view engine
+app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(express.static(path.join(__dirname, "/public")));
-app.use(express.urlencoded({ extended: true }));
-const ejsMate = require("ejs-mate")
-app.engine('ejs' , ejsMate);
 
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, "public")));
+
+// Middleware to parse the request body
+app.use(express.urlencoded({ extended: true }));
+
+// Connect to MongoDB
 async function main() {
     try {
         await mongoose.connect(MONGOOSE_URL);
@@ -32,13 +38,12 @@ app.listen(host, () => {
 
 // MAIN ROUTE
 app.get("/HackUtsav", (req, res) => {
-    res.render("index.ejs");
+    res.render("index");
 });
 
 app.get("/HackUtsav/Registration", (req, res) => {
-    res.render("new.ejs");
+    res.render("new");
 });
-
 
 // REGISTRATION AND PAYMENT ROUTE
 app.post("/HackUtsav/Registration", async (req, res) => {
@@ -48,14 +53,11 @@ app.post("/HackUtsav/Registration", async (req, res) => {
         // Validate if upiPaymentId is unique before saving
         const existingRegister = await Register.findOne({ upiPaymentId: newRegister.upiPaymentId });
         if (existingRegister) {
-            alert("Payment Id must be unique");
+            return res.status(400).send("Payment Id must be unique");
         } else {
             await newRegister.save();
-            alert("regitration done");
             res.redirect("/HackUtsav");
         }
-
-        
     } catch (error) {
         console.error("Error saving registration:", error);
         res.status(500).send("Error registering. Please try again.");

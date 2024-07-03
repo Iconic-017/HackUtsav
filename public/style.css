@@ -265,7 +265,16 @@ text-fill-color: transparent;
 
 
 
-
+.name{
+  display: flex;
+  justify-content: flex-start;
+  gap: 340px;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 800;
+  position: relative;
+}
 
 
 
@@ -599,8 +608,8 @@ text-fill-color: transparent;
 }
 
 #f1 img{
-  height: 200px;
-  border-radius: 100px;
+  height: 250px;
+  border-radius: 200px;
   border: 2px solid white;
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7), 0 0 30px 15px rgba(255, 255, 255, 0.7);
 }
@@ -613,7 +622,7 @@ text-fill-color: transparent;
 
 
 #f2 h2{
-  /* font-size: 30px; */
+
   white-space: nowrap;
   columns: black;
   font-weight: 400;
