@@ -267,13 +267,12 @@ text-fill-color: transparent;
 
 .name{
   display: flex;
-  justify-content: flex-start;
-  gap: 340px;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  font-size: 25px;
-  font-weight: 800;
+  gap: 350px;
   position: relative;
+  z-index: 10;
+  font-size: 20px;
 }
 
 
