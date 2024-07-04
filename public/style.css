@@ -16,6 +16,11 @@ body {
   color: #95c11e;
 }
 
+#nav a:hover {
+  color: #95c11e;
+  transition: color 0.3s ease;
+}
+
 body::-webkit-scrollbar {
   display: block;
   width: 8px;
@@ -652,6 +657,8 @@ text-fill-color: transparent;
 }
 
 .registration-body {
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(2, 2, 2);
 }
+
+/* Styling for registration form: */
 

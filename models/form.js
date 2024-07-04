@@ -35,7 +35,7 @@ const schema = new mongoose.Schema({
         type: Number,
         required : true,
         unique : true,
-        default : none
+        default : "none"
     },
     name2 : {
         type : String,
