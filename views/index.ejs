@@ -174,19 +174,19 @@
         <div class="prize first">
           <h2 data-prize="1st">1st</h2>
           <div class="details">
-            <p>The Winning Team will receive a cash price of: <h3>45K</h3></p>
+            <p>The Winning Team will receive a cash price of: <h3> ₹45000</h3></p>
           </div>
         </div>
         <div class="prize second">
           <h2 data-prize="2nd">2nd</h2>
           <div class="details">
-            <p>Runner ups will receive the cash price of: <h3>30K</h3></p>
+            <p>Runner ups will receive the cash price of: <h3> ₹30000</h3></p>
           </div>
         </div>
         <div class="prize third">
           <h2 data-prize="3rd">3rd</h2>
           <div class="details">
-            <p>Team with third position will receive the amount of: <h3>15K</h3></p>
+            <p>Team with third position will receive the amount of: <h3> ₹15000</h3></p>
           </div>
         </div>
       </div>
@@ -216,6 +216,27 @@ document.addEventListener("mousemove", function (dets) {
   blur.style.left = dets.x - 250 + "px";
   blur.style.top = dets.y - 250 + "px";
 });
+
+
+// Align the cursor with mouse for smooth transition
+
+const cursor = document.getElementById('cursor');
+const cursorBlur = document.getElementById('cursor-blur');
+
+document.addEventListener('mousemove', (e) => {
+  const { clientX: x, clientY: y } = e;
+
+  // Use requestAnimationFrame to ensure smooth and synchronized animation
+  requestAnimationFrame(() => {
+    cursor.style.left = `${x}px`;
+    cursor.style.top = `${y}px`;
+    cursorBlur.style.left = `${x}px`;
+    cursorBlur.style.top = `${y}px`;
+  });
+});
+
+
+
 
 var h4all = document.querySelectorAll("#nav h4");
 h4all.forEach(function (elem) {

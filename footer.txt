@@ -1,0 +1,26 @@
+<footer id="footer">
+    <img
+      src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg"
+      alt=""
+    />
+    <div id="f1">
+      <img src="/images/logo final.jpg"/>
+    </div>
+
+    <div id="f2">
+        <h2><i class="fa-brands fa-square-instagram"></i> <a href="https://www.instagram.com/hackutsav_mriirs/" style="text-decoration: none;"> Instagram </a></h2>
+        <h2><i class="fa-brands fa-discord"></i> Discord</h2>
+        <h2><i class="fa-brands fa-square-x-twitter"></i> Twitter</h2>
+        <h2><i class="fa-brands fa-linkedin"></i> LinkedIn</h2>
+    </div>
+
+    <div id="f4">
+      <h4>
+        Sector 43, <br><br>
+        Aravalli Hills, <br><br>
+        Delhi -Surajkund Road, <br><br>
+        121004, Faridabad, <br><br>
+        Haryana, India
+      </h4>
+    </div>
+  </footer>
