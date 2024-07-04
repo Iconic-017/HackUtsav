@@ -12,7 +12,7 @@ const schema = new mongoose.Schema({
         required: true
     },
 
-    teamName: {
+    teamname: {
         type: String,
         required : true
     },
@@ -51,7 +51,8 @@ const schema = new mongoose.Schema({
     },
     upiPaymentId: {
         type: String,
-        unique: true 
+        unique: true,
+        required : true
     }
 })
 

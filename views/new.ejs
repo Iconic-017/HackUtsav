@@ -1,24 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style.css">
     <title>Document</title>
 </head>
-<body class = "registration-body">
-    <div id="nav">
-        <img
-          src="/images/clg_logo.png"
-          alt=""
-        />
-        <h4>home</h4>
-        <h4>Team</h4>
-        <h4>Contact</h4>
-        <h4><a href="/HackUtsav/Registration" style="text-decoration: none;">Register</a></h4>
+
+<body class="registration-body">
+    <div class="main-navbar">
+        <div class="navbar" id="nav">
+            <img src="/images/clg_logo.png" alt="" />
+
+            <h4><a href="/HackUtsav" style="text-decoration: none;">Home</a></h4>
+
+            <h4><a href="#" style="text-decoration: none;">Contact</a></h4>
+
+            <h4><a href="/HackUtsav/Registration" style="text-decoration: none;">Register</a></h4>
+        </div>
     </div>
-    
-    
+    <section id="form-section">
+        <div class="main-form">
+            <div class="login-box">
+                <form method="" action="">
+                    <h2 id="form-header">Registration Form</h2>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
+                        <input type="number" name="members" required>
+                        <label for="members">Team Members: </label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="people"></ion-icon></span>
+                        <input type="text" name="teamname" required>
+                        <label for="teamname">Team Name </label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
+                        <input type="text" name="college" required>
+                        <label for="college">College Name</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+                        <input type="text" name="name1" required>
+                        <label for="name1">Name of member 1</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" name="email1" required>
+                        <label for="email1">Email of member 1</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="call"></ion-icon></span>
+                        <input type="number" name="contact1" required>
+                        <label for="contact1">Contact Number of member 1</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+                        <input type="text" name="name2">
+                        <label for="name2">Name of member 2</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" name="email2">
+                        <label for="email2">Email of member 2</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="call"></ion-icon></span>
+                        <input type="number" name="contact2">
+                        <label for="contact2">Contact number of member 2</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
+                        <input type="text" name="upiPaymentId" required>
+                        <label for="upiPaymentId">Enter your UPI payment ID </label>
+                    </div>
+                    <form method="" action="">
+                        <button type="submit" class="submit">Submit</button>
+                    </form>
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const inputs = document.querySelectorAll('.input-box input');
+
+        inputs.forEach(input => {
+          input.addEventListener('input', () => {
+            if (input.value.trim() !== '') {
+              input.classList.add('has-value');
+            } else {
+              input.classList.remove('has-value');
+            }
+          });
+
+          // Check initial value on page load
+          if (input.value.trim() !== '') {
+            input.classList.add('has-value');
+          }
+        });
+      });
+    </script>
 </body>
+
 </html>
