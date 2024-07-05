@@ -628,7 +628,7 @@ text-fill-color: transparent;
 #f1 , #f2 , #f4 {
   width: 100px;
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 
 
