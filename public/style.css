@@ -671,8 +671,8 @@ text-fill-color: transparent;
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000; /* Ensure this is high enough */
-  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background for better visibility */
+  z-index: 1000; 
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
 }
 
@@ -680,10 +680,10 @@ text-fill-color: transparent;
 #form-section {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align to start to prevent overlap */
+  align-items: flex-start; 
   width: 100%;
   height: 100vh;
-  padding-top: 80px; /* Ensure the form section starts below the navbar */
+  padding-top: 80px; 
   z-index: 1; 
 }
 
@@ -692,7 +692,7 @@ text-fill-color: transparent;
   width: 500px;
   height: auto;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.1); /* Adjust the background for better visibility */
+  background: rgba(255, 255, 255, 0.1); 
   border-radius: 20px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   display: flex;
@@ -715,6 +715,43 @@ text-fill-color: transparent;
   width: 310px;
   margin: 20px 0;
   border-bottom: 2px solid #fff;
+}
+
+.upi-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.upi-para {
+  font-size: 18px;
+  color: #fff;
+  opacity: 0; 
+  transform: translateY(20px); 
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.upi-image {
+  width: 100%;  
+  max-width: 300px;  
+  height: auto;  
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  opacity: 0;
+  transform: scale(0.9); 
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.show .upi-para {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.show .upi-image {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .input-box label {
