@@ -729,7 +729,7 @@ text-fill-color: transparent;
   color: #fff;
   opacity: 0; 
   transform: translateY(20px); 
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition: opacity 1s ease-in-out, transform 2.5s ease-in-out;
 }
 
 .upi-image {
@@ -741,7 +741,7 @@ text-fill-color: transparent;
   margin-top: 10px;
   opacity: 0;
   transform: scale(0.9); 
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition: opacity 1s ease-in-out, transform 2.5s ease-in-out;
 }
 
 .show .upi-para {

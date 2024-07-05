@@ -46,17 +46,17 @@ app.get("/HackUtsav/Registration", (req, res) => {
 });
 
 // REGISTRATION AND PAYMENT ROUTE
-app.post("/HackUtsav/Registration", async (req, res) => {
+app.post("/HackUtsav", async (req, res) => {
     try {
-        const newRegister = new Register(req.body.register);
-
+        const newRegister = new Register(req.body);
+        console.log(newRegister);
         // Validate if upiPaymentId is unique before saving
         const existingRegister = await Register.findOne({ upiPaymentId: newRegister.upiPaymentId });
         if (existingRegister) {
             return res.status(400).send("Payment Id must be unique");
         } else {
             await newRegister.save();
-            res.redirect("/HackUtsav");
+            res.status(200).send("Successfully registered!");
         }
     } catch (error) {
         console.error("Error saving registration:", error);
