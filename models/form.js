@@ -47,35 +47,35 @@ const schema = new mongoose.Schema({
 
     name2: {
         type: String,
-        validate: {
-            validator: function (v) {
-                return this.members !== 2 || (v && v !== 'none');
-            },
-            message: 'Please enter the second team member\'s name'
-        },
-        default: ''
+        // validate: {
+        //     validator: function (v) {
+        //         return this.members !== 2 || (v && v !== 'none');
+        //     },
+        //     message: 'Please enter the second team member\'s name'
+        // },
+        default: 'none'
     },
 
     email2: {
         type: String,
-        validate: {
-            validator: function (v) {
-                return this.members !== 2 || (v && v !== 'none');
-            },
-            message: 'Please enter the second team member\'s email'
-        },
-        default: ''
+        // validate: {
+        //     validator: function (v) {
+        //         return this.members !== 2 || (v && v !== 'none');
+        //     },
+        //     message: 'Please enter the second team member\'s email'
+        // },
+        default: 'abcd@gmail'
     },
 
     contact2: {
         type: Number,
-        validate: {
-            validator: function (v) {
-                // If members is 2, contact2 should not be the default value and should be a 10 digit number
-                return this.members !== 2 || (v && v !== 'none' && v.toString().length === 10);
-            },
-            message: props => `${props.value} is an invalid contact number for the second member!`
-        },
+        // validate: {
+        //     validator: function (v) {
+        //         // If members is 2, contact2 should not be the default value and should be a 10 digit number
+        //         return this.members !== 2 || (v && v !== 'none' && v.toString().length === 10);
+        //     },
+        //     message: props => `${props.value} is an invalid contact number for the second member!`
+        // },
         default: 'none'
     },
 
