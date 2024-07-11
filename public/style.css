@@ -638,14 +638,10 @@ text-fill-color: transparent;
 
 #f2 h2 {
   white-space: nowrap;
-<<<<<<< HEAD
   color: black;
-=======
-  color: black;  /* Changed from columns: black; as columns is not a valid color property */
->>>>>>> 363248d8f5e14211be8c44460f46c7a01bbc20dc
   font-weight: 400;
   margin-bottom: 8px;
-  padding-left: 20px;  /* Reduced padding to avoid excessive shifting */
+  padding-left: 20px; 
 }
 
 #f2 i {
