@@ -1,0 +1,70 @@
+/* Contact us section */
+#f5 h4 {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+#f5 h4 .contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; 
+}
+
+#f5 h4 ion-icon {
+  color: #000;
+  font-size: 25px;
+  margin-right: 10px; 
+}
+
+#f5 h4 .contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+#f5 h4 .contact-details p {
+  margin: 0;
+}
+
+#f5 {
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+#footer-heading {
+  font-size: 18px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: black;  
+  font-weight: 600;
+  line-height: 20px;
+
+}
+#suryansh-goyal {
+  font-size: 18px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #fff;  
+  font-weight: 600;
+  line-height: 20px;
+}
+
+#sanidhya-chauhan {
+  font-size: 18px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #fff;  
+  font-weight: 600;
+  line-height: 20px;
+}
+
+#suryansh-contact {
+  color: #000;
+  font-size: 19px;
+}
+
+#sanidhya-contact {
+  color: #000;
+  font-size: 19px;
+}

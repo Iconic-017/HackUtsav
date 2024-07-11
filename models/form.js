@@ -11,26 +11,22 @@ const schema = new mongoose.Schema({
         },
         required: [true, "Number of members are required"]
     },
-
     teamname: {
         type: String,
         required: [true, "Please choose a team name for the event"]
     },
-
     college: {
         type: String,
         required: [true, "Please enter your college!"]
     },
-
     name1: {
         type: String,
         required: [true, "Please enter your name!"]
     },
-
     email1: {
         type: String,
         required: [true, "Email is required!"],
-        unique: true
+        // unique: true
     },
     contact1: {
         type: Number,
@@ -43,19 +39,20 @@ const schema = new mongoose.Schema({
             message: props => `${props.value} is an invalid contact number!`
         },
     },
-
     name2: {
         type: String,
+        default: null,
         validate: {
             validator: function (v) {
                 return this.members !== 2 || (v && v.trim() !== '');
             },
             message: 'Please enter the second team member\'s name'
         },
-    },
 
+    },
     email2: {
         type: String,
+        default: null,
         validate: {
             validator: function (v) {
                 return this.members !== 2 || (v && v.trim() !== '');
@@ -63,9 +60,9 @@ const schema = new mongoose.Schema({
             message: 'Please enter the second team member\'s email'
         },
     },
-
     contact2: {
         type: Number,
+        default: null,
         validate: {
             validator: function (v) {
                 return this.members !== 2 || (v && v.toString().length === 10);
@@ -73,13 +70,12 @@ const schema = new mongoose.Schema({
             message: props => `${props.value} is an invalid contact number for the second member!`
         },
     },
-
     upiPaymentId: {
         type: String,
         unique: true,
         required: [true, "Please enter your UPI transaction ID"]
     }
-});
 
+});
 const register = new mongoose.model("register", schema);
 module.exports = register;
