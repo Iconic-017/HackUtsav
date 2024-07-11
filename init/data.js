@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const register = require("../models/form.js")
 
-let MONGOOSE_URL = "mongodb://127.0.0.1:27017/hacakathon";
+let MONGOOSE_URL = "mongodb://127.0.0.1:27017/hackathon";
 
 main()
 .then(() => {
