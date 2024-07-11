@@ -38,26 +38,42 @@ app.listen(host, () => {
 
 // MAIN ROUTE
 app.get("/HackUtsav", (req, res) => {
-    res.render("index");
+    res.render("index.ejs");
 });
 
 app.get("/HackUtsav/Registration", (req, res) => {
-    res.render("new");
+    res.render("new.ejs");
 });
 
 // REGISTRATION AND PAYMENT ROUTE
 app.post("/HackUtsav", async (req, res) => {
     try {
-        const newRegister = new Register(req.body);
-        console.log(newRegister);
-        // Validate if upiPaymentId is unique before saving
-        const existingRegister = await Register.findOne({ upiPaymentId: newRegister.upiPaymentId });
-        if (existingRegister) {
-            return res.status(400).send("Payment Id must be unique");
-        } else {
-            await newRegister.save();
-            res.status(200).send("Successfully registered!");
+        console.log(req.body);  // Log the request body for debugging
+
+        const { email1, email2, contact1, upiPaymentId, ...otherFields } = req.body;
+
+        // Validate required fields
+        if (!email1) {
+            return res.status(400).send("Email1 is required");
         }
+
+        if (otherFields.members == 2 && !email2) {
+            return res.status(400).send("Email2 is required for two members");
+        }
+
+        // Check for duplicate unique fields
+        const existingRegisterByEmail1 = await Register.findOne({ email1 });
+        const existingRegisterByEmail2 = email2 ? await Register.findOne({ email2 }) : null;
+        const existingRegisterByContact1 = await Register.findOne({ contact1 });
+        const existingRegisterByPaymentId = await Register.findOne({ upiPaymentId });
+
+        if (existingRegisterByEmail1 || existingRegisterByEmail2 || existingRegisterByContact1 || existingRegisterByPaymentId) {
+            return res.status(400).send("Duplicate key error: Ensure that email, contact, and payment ID are unique.");
+        }
+
+        const newRegister = new Register({ email1, email2, contact1, upiPaymentId, ...otherFields });
+        await newRegister.save();
+        res.status(200).send("Successfully registered!");
     } catch (error) {
         console.error("Error saving registration:", error);
         res.status(500).send("Error registering. Please try again.");
