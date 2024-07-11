@@ -24,7 +24,7 @@
 
             <h4><a href="/HackUtsav" style="text-decoration: none;">Home</a></h4>
 
-            <h4><a href="#" style="text-decoration: none;">Contact</a></h4>
+            <h4><a href="#" class="contact-link" id="contact-button" style="text-decoration: none;">Contact</a></h4>
 
         </div>
     </div>
@@ -220,6 +220,18 @@
                 }
             });
         });
+        const contactButton = document.getElementById('contact-button');
+
+        contactButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            // Scroll smoothly to the bottom of the page (footer)
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+
     </script>
 </body>
 
