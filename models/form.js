@@ -41,22 +41,53 @@ const schema = new mongoose.Schema({
     },
     name2: {
         type: String,
+<<<<<<< HEAD
         default: null
+=======
+        validate: {
+            validator: function (v) {
+                return this.members !== 2 || (v && v.trim() !== '');
+            },
+            message: 'Please enter the second team member\'s name'
+        },
+>>>>>>> 363248d8f5e14211be8c44460f46c7a01bbc20dc
     },
     email2: {
         type: String,
+<<<<<<< HEAD
         default: null
+=======
+        validate: {
+            validator: function (v) {
+                return this.members !== 2 || (v && v.trim() !== '');
+            },
+            message: 'Please enter the second team member\'s email'
+        },
+>>>>>>> 363248d8f5e14211be8c44460f46c7a01bbc20dc
     },
     contact2: {
         type: Number,
+<<<<<<< HEAD
         default: null
+=======
+        validate: {
+            validator: function (v) {
+                return this.members !== 2 || (v && v.toString().length === 10);
+            },
+            message: props => `${props.value} is an invalid contact number for the second member!`
+        },
+>>>>>>> 363248d8f5e14211be8c44460f46c7a01bbc20dc
     },
     upiPaymentId: {
         type: String,
         unique: true,
         required: [true, "Please enter your UPI transaction ID"]
     }
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> 363248d8f5e14211be8c44460f46c7a01bbc20dc
 
 const register = new mongoose.model("register", schema);
 module.exports = register;

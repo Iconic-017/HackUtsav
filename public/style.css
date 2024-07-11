@@ -601,61 +601,66 @@ text-fill-color: transparent;
 
 /* FOOTER */
 
-#footer{
+#footer {
   height: 40vh;
   width: 100%;
-  background: linear-gradient(to left bottom , #119f3a , #ACE022);
+  background: linear-gradient(to left bottom, #119f3a, #ACE022);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 150px;
-  padding: 0 100px;
+  gap: 150px;  /* Consider responsiveness */
+  padding: 0 100px;  /* This padding might need to be adjusted on smaller screens */
 }
 
-#footer > img{
+#footer > img {
   position: absolute;
   left: 0;
   height: 100%;
+  width: 100%;  /* Ensure the image covers the whole footer area */
+  object-fit: cover;  /* This will prevent the image from distorting */
   z-index: 0;
 }
 
-#f1 img{
+#f1 img {
   height: 250px;
-  border-radius: 200px;
+  width: 250px;  /* Added to maintain aspect ratio */
+  border-radius: 50%;  /* Use percentage to create perfect circle */
   border: 2px solid white;
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7), 0 0 30px 15px rgba(255, 255, 255, 0.7);
 }
 
-#f1 , #f2 , #f4 {
-  width: 100px;
+#f1, #f2, #f4 {
+  width: auto;  /* Changed from 100px to auto to allow content-based sizing */
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 
-
-#f2 h2{
-
+#f2 h2 {
   white-space: nowrap;
+<<<<<<< HEAD
   color: black;
+=======
+  color: black;  /* Changed from columns: black; as columns is not a valid color property */
+>>>>>>> 363248d8f5e14211be8c44460f46c7a01bbc20dc
   font-weight: 400;
   margin-bottom: 8px;
-  padding-left: 300px;
+  padding-left: 20px;  /* Reduced padding to avoid excessive shifting */
 }
 
-#f2 i{
+#f2 i {
   color: black;
 }
 
-#f4 h4{
+#f4 h4 {
   font-size: 18px;
   white-space: nowrap;
   text-transform: uppercase;
-  columns: black;
+  color: black;  /* Corrected from columns: black */
   font-weight: 600;
   margin-bottom: 8px;
   line-height: 20px;
-  padding-left: 540px;
+  padding-left: 20px;  /* Reduced padding for better alignment */
 }
 
 /* Styling for registration form: */
@@ -686,6 +691,33 @@ text-fill-color: transparent;
   z-index: 1; 
 }
 
+/* Styling for the dropdown menu */
+.input-box select {
+  width: 100%;
+  padding: 0 35px 0 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff; 
+  font-size: 16px;
+  /* border-bottom: 2px solid #95c11e; */
+}
+
+.input-box select option {
+  background-color: rgba(255, 255, 255, 0.9); 
+  color: #000; 
+}
+
+
+
+.input-box select + label {
+  top: -20px;
+  font-family: 'Poppins' , sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+
+
 .login-box {
   position: relative;
   width: 500px;
@@ -706,7 +738,7 @@ text-fill-color: transparent;
   font-size: 2em;
   color: #fff;
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 65px;
 }
 
 .input-box {
