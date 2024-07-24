@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -6,7 +10,8 @@ const Register = require("./models/form.js");
 const ejsMate = require("ejs-mate");
 
 let host = 3001;
-let MONGOOSE_URL = "mongodb://127.0.0.1:27017/hackathon";
+let MONGOOSE_URL = process.env.ATLASDB_URL;
+
 
 // Set up EJS as the view engine
 app.engine("ejs", ejsMate);
