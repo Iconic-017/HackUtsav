@@ -46,8 +46,9 @@ body {
   position: fixed;
   z-index: 99;
   pointer-events: none;
-  transition: all linear 0.1s;
+  transform: translate(-50%, -50%);
 }
+
 #cursor-blur {
   height: 500px;
   width: 500px;
@@ -57,7 +58,7 @@ body {
   filter: blur(80px);
   z-index: 9;
   pointer-events: none;
-  transition: all linear 0.4s;
+  transform: translate(-50%, -50%);
 }
 
 
