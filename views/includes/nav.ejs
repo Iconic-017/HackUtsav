@@ -1,32 +1,33 @@
 <div id="nav">
-
   <img src="/images/clg_logo.png" alt="" />
-
-  <h4><a href="/HackUtsav" style="text-decoration: none;">Home</a></h4>
-
-  <h4><a href="#" class="team-link" id="team-button" style="text-decoration: none;">Team</a></h4>
-
-  <h4><a href="#" class="contact-link" id="contact-button" style="text-decoration: none;">Contact</a></h4>
-
-  <h4><a href="/HackUtsav/Registration" style="text-decoration: none;">Register</a></h4>
-
+  <div id="nav-links">
+    <h4><a href="/HackUtsav" style="text-decoration: none;">Home</a></h4>
+    <h4><a href="#" class="team-link" id="team-button" style="text-decoration: none;">Team</a></h4>
+    <h4><a href="#" class="contact-link" id="contact-button" style="text-decoration: none;">Contact</a></h4>
+    <h4><a href="/HackUtsav/Registration" style="text-decoration: none;">Register</a></h4>
+  </div>
+  <button id="nav-toggle">☰</button>
 </div>
+
 <script>
   const contactButton = document.getElementById('contact-button');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
 
   contactButton.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent default anchor behavior
-
-    // Scroll smoothly to the bottom of the page (footer)
+    event.preventDefault();
     window.scrollTo({
       top: document.body.scrollHeight,
       behavior: 'smooth'
     });
   });
+
+  navToggle.addEventListener('click', function () {
+    navLinks.classList.toggle('active');
+  });
 </script>
 
 <video autoplay loop muted src="/videos/Hunt 2 (online-video-cutter.com).mp4"></video>
-
 
 <!-- CURSOR FOR BLUR -->
 <div id="cursor"></div>
