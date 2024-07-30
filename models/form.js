@@ -5,9 +5,9 @@ const schema = new mongoose.Schema({
         type: Number,
         validate: {
             validator: function (v) {
-                return v === 1 || v === 2;
+                return v === 1 || v === 2 || v===3;
             },
-            message: 'Team members can be either 1 or 2'
+            message: 'Team members can be either 1 or 2 or 3'
         },
         required: [true, "Number of members are required"]
     },
@@ -18,6 +18,14 @@ const schema = new mongoose.Schema({
     college: {
         type: String,
         required: [true, "Please enter your college!"]
+    },
+    college_id : {
+        type: String,
+        required: [true, "Please enter your college ID!"]
+    },
+    branch: {
+        type: String,
+        required: [true, "Please enter your Branch!"]
     },
     name1: {
         type: String,
@@ -65,11 +73,45 @@ const schema = new mongoose.Schema({
         default: null,
         validate: {
             validator: function (v) {
+                return this.members !== 3 || (v && v.toString().length === 10);
+            },
+            message: props => `${props.value} is an invalid contact number for the second member!`
+        },
+    },
+
+    name3: {
+        type: String,
+        default: null,
+        validate: {
+            validator: function (v) {
+                return this.members !== 3 || (v && v.trim() !== '');
+            },
+            message: 'Please enter the second team member\'s name'
+        },
+
+    },
+    email3: {
+        type: String,
+        default: null,
+        validate: {
+            validator: function (v) {
+                return this.members !== 3 || (v && v.trim() !== '');
+            },
+            message: 'Please enter the second team member\'s email'
+        },
+    },
+    contact3: {
+        type: Number,
+        default: null,
+        validate: {
+            validator: function (v) {
                 return this.members !== 2 || (v && v.toString().length === 10);
             },
             message: props => `${props.value} is an invalid contact number for the second member!`
         },
     },
+
+
     upiPaymentId: {
         type: String,
         unique: true,
