@@ -5,11 +5,11 @@ const schema = new mongoose.Schema({
         type: Number,
         validate: {
             validator: function (v) {
-                return v === 1 || v === 2 || v===3;
+                return v === 1 || v === 2 || v === 3;
             },
-            message: 'Team members can be either 1 or 2 or 3'
+            message: 'Team members can be either 1, 2, or 3'
         },
-        required: [true, "Number of members are required"]
+        required: [true, "Number of members is required"]
     },
     teamname: {
         type: String,
@@ -19,7 +19,7 @@ const schema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter your college!"]
     },
-    college_id : {
+    college_id: {
         type: String,
         required: [true, "Please enter your college ID!"]
     },
@@ -34,7 +34,6 @@ const schema = new mongoose.Schema({
     email1: {
         type: String,
         required: [true, "Email is required!"],
-        // unique: true
     },
     contact1: {
         type: Number,
@@ -52,7 +51,7 @@ const schema = new mongoose.Schema({
         default: null,
         validate: {
             validator: function (v) {
-                return this.members !== 2 || (v && v.trim() !== '');
+                return this.members >= 2 || (v && v.trim() !== '');
             },
             message: 'Please enter the second team member\'s name'
         },
@@ -63,7 +62,7 @@ const schema = new mongoose.Schema({
         default: null,
         validate: {
             validator: function (v) {
-                return this.members !== 2 || (v && v.trim() !== '');
+                return this.members >= 2 || (v && v.trim() !== '');
             },
             message: 'Please enter the second team member\'s email'
         },
@@ -73,20 +72,19 @@ const schema = new mongoose.Schema({
         default: null,
         validate: {
             validator: function (v) {
-                return this.members !== 3 || (v && v.toString().length === 10);
+                return this.members >= 2 || (v && v.toString().length === 10);
             },
             message: props => `${props.value} is an invalid contact number for the second member!`
         },
     },
-
     name3: {
         type: String,
         default: null,
         validate: {
             validator: function (v) {
-                return this.members !== 3 || (v && v.trim() !== '');
+                return this.members === 3 || (v && v.trim() !== '');
             },
-            message: 'Please enter the second team member\'s name'
+            message: 'Please enter the third team member\'s name'
         },
 
     },
@@ -95,9 +93,9 @@ const schema = new mongoose.Schema({
         default: null,
         validate: {
             validator: function (v) {
-                return this.members !== 3 || (v && v.trim() !== '');
+                return this.members === 3 || (v && v.trim() !== '');
             },
-            message: 'Please enter the second team member\'s email'
+            message: 'Please enter the third team member\'s email'
         },
     },
     contact3: {
@@ -105,19 +103,17 @@ const schema = new mongoose.Schema({
         default: null,
         validate: {
             validator: function (v) {
-                return this.members !== 2 || (v && v.toString().length === 10);
+                return this.members === 3 || (v && v.toString().length === 10);
             },
-            message: props => `${props.value} is an invalid contact number for the second member!`
+            message: props => `${props.value} is an invalid contact number for the third member!`
         },
     },
-
-
     upiPaymentId: {
         type: String,
         unique: true,
         required: [true, "Please enter your UPI transaction ID"]
     }
-
 });
+
 const register = new mongoose.model("register", schema);
 module.exports = register;
