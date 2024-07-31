@@ -149,8 +149,6 @@ video {
 }
 
 
-
-
 #main {
   position: relative;
   background-color: rgba(0, 0, 0, 0.39);
@@ -167,11 +165,13 @@ video {
   text-align: center;
   z-index: 10;
 }
+
 #page1 h1 {
   font-size: 7.5vw;
   font-weight: 900;
   position: relative;
 }
+
 #page1 h1::before {
   content: "HACK UTSAV";
   position: absolute;
@@ -181,6 +181,7 @@ video {
   -webkit-text-stroke: 1.5px #95c11e;
   z-index: -1;
 }
+
 #page1 h2 {
   font-size: 20px;
   font-weight: 800;
@@ -198,13 +199,12 @@ video {
   }
 }
 
-
-
 #page1 p {
   font-size: 1.2vw;
   font-weight: 500;
   width: 40%;
 }
+
 #page1 #arrow {
   height: 250px;
   width: 250px;
@@ -219,14 +219,73 @@ video {
   border-radius: 50%;
   transition: all ease 0.5s;
 }
+
 #page1 #arrow i {
   font-size: 50px;
   font-weight: 100;
 }
+
 #page1 #arrow:hover {
   scale: 0.4;
   background-color: #95c11e;
 }
+
+@media (max-width: 768px) {
+  #page1 h1 {
+    font-size: 10vw;
+  }
+
+  #page1 h1::before {
+    -webkit-text-stroke: 1px #95c11e;
+  }
+
+  #page1 h2 {
+    font-size: 16px;
+  }
+
+  #page1 p {
+    font-size: 2.5vw;
+    width: 80%;
+  }
+
+  #page1 #arrow {
+    height: 150px;
+    width: 150px;
+  }
+
+  #page1 #arrow i {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  #page1 h1 {
+    font-size: 12vw;
+  }
+
+  #page1 h1::before {
+    -webkit-text-stroke: 0.8px #95c11e;
+  }
+
+  #page1 h2 {
+    font-size: 14px;
+  }
+
+  #page1 p {
+    font-size: 3vw;
+    width: 90%;
+  }
+
+  #page1 #arrow {
+    height: 100px;
+    width: 100px;
+  }
+
+  #page1 #arrow i {
+    font-size: 20px;
+  }
+}
+
 #page2 {
   min-height: 100vh;
   width: 100%;
@@ -247,7 +306,6 @@ video {
 /* PAGE 2 */
 
 #scroller {
-  /* background-color: red; */
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
@@ -290,11 +348,8 @@ video {
   }
 }
 
-#about-us{
-  margin-top: 100px;
-}
-
 #about-us {
+  margin-top: 100px;
   height: 40vh;
   width: 100%;
   display: flex;
@@ -322,6 +377,47 @@ video {
 #about-us-in p {
   font-size: 20px;
   line-height: 26px;
+}
+
+@media (max-width: 768px) {
+  #about-us {
+    flex-direction: column;
+    height: auto;
+    padding: 0 20px;
+  }
+  #about-us img {
+    height: 180px;
+    width: 180px;
+    margin-bottom: 20px;
+  }
+  #about-us-in {
+    width: 100%;
+    text-align: center;
+  }
+  #about-us-in h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  #about-us-in p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  #about-us img {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  #about-us-in h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  #about-us-in p {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
 
@@ -354,100 +450,123 @@ text-fill-color: transparent;
 
 
 
-
-
-/* CARD ROW 1 */
-#cards-container-r1{
-  height: 60vh;
+.cards-wrapper {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 70px;
-  position: relative;
-  z-index: 10;
+  gap: 20px;
 }
-#cards-container-r1 .card {
-  height: 80%;
-  width: 24%;
+
+.card-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 100%;
+  height: 250px;
   border-radius: 20px;
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  transition: all ease 0.6s;
+  transition: all 0.6s ease;
 }
 
-#cards-container-r1 #card1 {
-  background-image: url("/images/sandu.jpg");
+#card1 { background-image: url("/images/sandu.jpg"); }
+#card2 { background-image: url("/images/haidu.jpg"); }
+#card3 { background-image: url("/images/surya.jpg"); }
+#card4 { background-image: url("/images/me.jpg"); }
+#card5 { background-image: url("/images/tyagi.jpg"); }
+#card6 { background-image: url("/images/pun.jpg"); }
+#card7 { background-image: url("/images/rit.jpg"); }
+#card8 { background-image: url("/images/naz.jpg"); }
+
+.name {
+  text-align: center;
+  margin-top: 10px;
 }
-#cards-container-r1 #card2 {
-  background-image: url("/images/haidu.jpg");
+
+@media (max-width: 768px) {
+  .card-container {
+    width: 45%;
+  }
 }
-#cards-container-r1 #card3 {
-  background-image: url("/images/surya.jpg");
+
+@media (max-width: 480px) {
+  .card-container {
+    width: 100%;
+  }
+}.team-section {
+  padding: 20px;
 }
 
+.team {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-
-
-
-/* CARD ROW 2 */
-#cards-container-r2{
-  height: 60vh;
+.cards-wrapper {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 70px;
-  position: relative;
-  z-index: 10;
+  gap: 20px;
 }
-#cards-container-r2 .card {
-  height: 80%;
-  width: 24%;
+
+.card-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 100%;
+  height: 250px;
   border-radius: 20px;
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  transition: all ease 0.6s;
-}
-#cards-container-r2 #card1 {
-  background-image: url("/images/me.jpg");
-}
-#cards-container-r2 #card2 {
-  background-image: url("/images/tyagi.jpg");
-}
-#cards-container-r2 #card3 {
-  background-image: url("/images/pun.jpg");
+  transition: all 0.6s ease;
 }
 
+#card1 { background-image: url("/images/sandu.jpg"); }
+#card2 { background-image: url("/images/haidu.jpg"); }
+#card3 { background-image: url("/images/surya.jpg"); }
+#card4 { background-image: url("/images/me.jpg"); }
+#card5 { background-image: url("/images/tyagi.jpg"); }
+#card6 { background-image: url("/images/pun.jpg"); }
+#card7 { background-image: url("/images/rit.jpg"); }
+#card8 { background-image: url("/images/naz.jpg"); }
 
+.name {
+  text-align: center;
+  margin-top: 10px;
+}
 
+@media (max-width: 768px) {
+  .card-container {
+    width: 45%;
+  }
 
+  .team h2 {
+    font-size: 1.5em;
+  }
+}
 
-/* CARD ROW 3 */
-#cards-container-r3{
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 70px;
-  position: relative;
-  z-index: 10;
+@media (max-width: 480px) {
+  .card-container {
+    width: 100%;
+  }
+
+  .team h2 {
+    font-size: 1.2em;
+  }
 }
-#cards-container-r3 .card {
-  height: 80%;
-  width: 24%;
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  transition: all ease 0.6s;
-}
-#cards-container-r3 #card1 {
-  background-image: url("/images/rit.jpg");
-}
-#cards-container-r3 #card2 {
-  background-image: url("/images/naz.jpg");
-}
+
 
 
 
@@ -485,30 +604,61 @@ text-fill-color: transparent;
 
 
 /* GREEN DIV */
-#green-div{
-  height: 30vh;
+#green-div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(to left bottom  , #28912E , #ACE022);
+  justify-content: center;
+  background: linear-gradient(to left bottom, #28912E, #ACE022);
+  padding: 10px 20px;
+  box-sizing: border-box;
+  min-height: 80px; /* Set a minimum height for better appearance */
 }
-#green-div h4{
-  width: 450%;
+
+#green-div h4 {
   font-size: 30px;
   color: #000;
   text-transform: uppercase;
-  line-height: 50px;
+  line-height: 40px; /* Reduced line height */
   text-align: center;
   font-weight: 800;
+  margin: 0; /* Remove margin to reduce height */
 }
 
-#green-div img{
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-
+#green-div img {
+  height: 40px; /* Reduce image height */
+  width: auto; /* Maintain aspect ratio */
 }
 
+@media (max-width: 768px) {
+  #green-div {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  #green-div h4 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  #green-div img {
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  #green-div {
+    padding: 8px;
+  }
+  
+  #green-div h4 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #green-div img {
+    height: 24px;
+  }
+}
 
 
 
