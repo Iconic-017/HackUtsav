@@ -167,6 +167,10 @@ const RegisterSchema = new Schema({
     upiPaymentId: {
         type: String,
         required: true
+    },
+    interest: {
+        type: String,
+        required: [true, "Please enter your area of interest!"]
     }
 });
 
