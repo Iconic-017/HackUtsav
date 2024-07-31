@@ -141,12 +141,15 @@ body {
 }
 
 video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: -1;
-  position: fixed;
+  position: fixed; /* Keep the video fixed to the viewport */
+  top: 0; /* Position it at the top */
+  left: 0; /* Position it at the left */
+  height: 100vh; /* Cover the full height of the viewport */
+  width: 100vw; /* Cover the full width of the viewport */
+  object-fit: cover; /* Ensure the video covers the viewport without distortion */
+  z-index: -1; /* Place the video behind other content */
 }
+
 
 
 #main {
@@ -665,7 +668,7 @@ text-fill-color: transparent;
 
 
 /* PAGE 3 */
-#page3{
+#page3 {
   height: 100%;
   width: 100%;
   background: #000;
@@ -673,55 +676,94 @@ text-fill-color: transparent;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 20px; 
+  box-sizing: border-box;
 }
 
-#page3 > p{
+#page3 > p {
   font-size: 35px;
   font-weight: 700;
   width: 60%;
   line-height: 45px;
   text-align: center;
+  color: #fff; 
 }
 
-
-#page3 img{
+#page3 img {
   position: absolute;
   height: 60px;
-
 }
 
-#page3 #colon1{
+#page3 #colon1 {
   left: 7%;
   top: -10%;
 }
 
-#page3 #colon2{
+#page3 #colon2 {
   left: 80%;
   top: 90%;
 }
 
+@media (max-width: 768px) {
+  #page3 > p {
+    font-size: 28px;
+    width: 80%; 
+    line-height: 36px;
+  }
 
+  #page3 img {
+    height: 40px; 
+  }
 
+  #page3 #colon1 {
+    left: 5%;
+    top: -5%;
+  }
 
+  #page3 #colon2 {
+    left: 75%;
+    top: 85%; 
+  }
+}
 
+@media (max-width: 480px) {
+  #page3 > p {
+    font-size: 20px;
+    width: 90%; 
+    line-height: 28px;
+  }
 
+  #page3 img {
+    height: 30px; 
+  }
 
+  #page3 #colon1 {
+    left: 2%;
+    top: 0%;
+  }
+
+  #page3 #colon2 {
+    left: 70%;
+    top: 75%; 
+  }
+}
 
 
 
 /* PAGE 4 */
 
 #page4 {
-  height: 100vh;
+  height: auto; /* Adjust height to fit content */
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: 40px;
+  gap: 20px; /* Adjust gap for smaller screens */
   z-index: 10;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 #page4 .prize {
@@ -730,13 +772,15 @@ text-fill-color: transparent;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  max-width: 300px; /* Limit the width to prevent large cards on wider screens */
+  flex: 1 1 auto; /* Allow flexibility in sizing */
 }
 
 #page4 .prize h2 {
-  font-size: 7.5vw;
+  font-size: 5vw; /* Adjust font size for responsiveness */
   font-weight: 800;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Adjust margin for responsiveness */
 }
 
 #page4 .prize h2::before {
@@ -745,36 +789,37 @@ text-fill-color: transparent;
   color: #000;
   top: -5px;
   left: -5px;
-  -webkit-text-stroke: 1.5px #95c11e;
+  -webkit-text-stroke: 1px #95c11e; /* Adjust text stroke */
   z-index: -1;
 }
 
 #page4 .prize .details {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
+  padding: 15px; /* Adjust padding for responsiveness */
   border-radius: 10px;
-  width: 80%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-size: 1.5vw;
+  width: 100%; /* Full width within the card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 3vw; /* Adjust font size for responsiveness */
 }
 
-#page4 .details {
-  transition: all ease 0.6;
-}
-
-#page4 .details:hover{
+#page4 .details:hover {
   background: linear-gradient(to left top, #28912E, #ACE022);
-  box-shadow: 0 0 30px #ACE022;
+  box-shadow: 0 0 20px #ACE022;
   transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-#page4 .details h3{
-  background: linear-gradient(to left top  , #ff2a00 , #f6ff52);
+#page4 .details p {
+  font-size: 3vw; /* Adjusted font size for paragraph */
+  margin: 0; /* Remove default margin */
+}
+
+#page4 .details #prize-amt {
+  background: linear-gradient(to left top, #ff2a00, #f6ff52);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-   text-fill-color: transparent; 
-   font-size: 35px;
+  text-fill-color: transparent;
+  font-size: 35px; /* Increased font size for prize amounts */
 }
 
 #page4 .details {
@@ -783,13 +828,13 @@ text-fill-color: transparent;
 
 .pri {
   text-align: center;
-  font-size: 3rem;
-  margin-top: 50px; 
+  font-size: 2rem; /* Adjust font size for headings */
+  margin-top: 30px; /* Adjust margin for spacing */
   animation: glow 1.5s infinite alternate;
 }
 
-.pri h1{
-  -webkit-text-stroke: 1.5px #95c11e;
+.pri h1 {
+  -webkit-text-stroke: 1px #95c11e; /* Adjust text stroke */
 }
 
 @keyframes glow {
@@ -802,45 +847,101 @@ text-fill-color: transparent;
 }
 
 #spacer {
-  height: 100px;
+  height: 50px; /* Adjust spacer height */
+}
+
+@media (max-width: 768px) {
+  #page4 {
+    flex-direction: column; /* Stack prizes vertically on smaller screens */
+    align-items: center;
+    gap: 20px;
+  }
+
+  #page4 .prize h2 {
+    font-size: 6vw; /* Further reduce font size for smaller screens */
+  }
+
+  #page4 .prize .details {
+    width: 90%; /* Better fit */
+    font-size: 5vw; /* Further reduce font size for responsiveness */
+  }
+
+  #page4 .details p {
+    font-size: 5vw; /* Adjusted font size for paragraph */
+  }
+
+  #page4 .details #prize-amt {
+    font-size: 35px; /* Adjust font size for prize amounts */
+  }
+
+  .pri {
+    font-size: 1.5rem; /* Adjust font size for headings */
+    margin-top: 20px; /* Adjust margin */
+  }
+}
+
+@media (max-width: 480px) {
+  #page4 .prize h2 {
+    font-size: 7vw; /* Further adjust font size for very small screens */
+  }
+
+  #page4 .prize .details {
+    width: 100%; /* Full width */
+    font-size: 6vw; /* Further adjust font size */
+  }
+
+  #page4 .details p {
+    font-size: 6vw; /* Adjusted font size for paragraph */
+  }
+
+  #page4 .details #prize-amt {
+    font-size: 30px; /* Further adjusted font size for prize amounts */
+  }
+
+  .pri {
+    font-size: 1.2rem; /* Further adjust font size */
+    margin-top: 15px; /* Further reduce margin */
+  }
 }
 
 
 /* FOOTER */
 
 #footer {
-  height: 40vh;
+  height: auto; /* Adjust height to fit content */
   width: 100%;
   background: linear-gradient(to left bottom, #119f3a, #ACE022);
   position: relative;
   display: flex;
+  flex-direction: row; /* Horizontal layout for larger screens */
   align-items: center;
-  justify-content: flex-start;
-  gap: 150px;  /* Consider responsiveness */
-  padding: 0 100px;  /* This padding might need to be adjusted on smaller screens */
+  justify-content: space-between; /* Space out items */
+  padding: 20px 100px; /* Large padding for larger screens */
+  box-sizing: border-box;
 }
 
 #footer > img {
   position: absolute;
   left: 0;
   height: 100%;
-  width: 100%;  /* Ensure the image covers the whole footer area */
-  object-fit: cover;  /* This will prevent the image from distorting */
+  width: 100%;
+  object-fit: cover;
   z-index: 0;
 }
 
 #f1 img {
-  height: 250px;
-  width: 250px;  /* Added to maintain aspect ratio */
-  border-radius: 50%;  /* Use percentage to create perfect circle */
+  height: 250px; /* Normal size for larger screens */
+  width: 250px; 
+  border-radius: 50%;
   border: 2px solid white;
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7), 0 0 30px 15px rgba(255, 255, 255, 0.7);
 }
 
-#f1, #f2, #f4 {
-  width: auto;  /* Changed from 100px to auto to allow content-based sizing */
+#f1, #f2, #f4, #f5 {
   position: relative;
-  z-index: 0;
+  z-index: 1; /* Ensure content is above the background image */
+  text-align: center; /* Center-align text */
+  margin: 0 20px; /* Add margin for spacing */
 }
 
 #f2 h2 {
@@ -848,7 +949,8 @@ text-fill-color: transparent;
   color: black;
   font-weight: 400;
   margin-bottom: 8px;
-  padding-left: 20px; 
+  padding-left: 20px;
+  font-size: 16px; /* Normal font size */
 }
 
 #f2 i {
@@ -856,34 +958,33 @@ text-fill-color: transparent;
 }
 
 #f4 h4 {
-  font-size: 18px;
+  font-size: 18px; /* Normal font size */
   white-space: nowrap;
   text-transform: uppercase;
-  color: black;  /* Corrected from columns: black */
+  color: black;
   font-weight: 600;
   margin-bottom: 8px;
   line-height: 20px;
-  padding-left: 20px;  /* Reduced padding for better alignment */
+  padding-left: 20px;
 }
 
-
-/* Contact us section */
 #f5 h4 {
   display: flex;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
+  font-size: 16px; /* Normal font size */
 }
 
 #f5 h4 .contact-item {
   display: flex;
   align-items: center;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 #f5 h4 ion-icon {
   color: #000;
-  font-size: 25px;
-  margin-right: 10px; 
+  font-size: 25px; /* Normal icon size */
+  margin-right: 10px;
 }
 
 #f5 h4 .contact-details {
@@ -895,47 +996,107 @@ text-fill-color: transparent;
   margin: 0;
 }
 
-#f5 {
-  display: flex;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
-}
-
 #footer-heading {
-  font-size: 18px;
-  white-space: nowrap;
-  text-transform: uppercase;
-  color: black;  
+  font-size: 18px; /* Normal font size */
+  color: black;
   font-weight: 600;
-  line-height: 20px;
-
-}
-#suryansh-goyal {
-  font-size: 18px;
-  white-space: nowrap;
-  text-transform: uppercase;
-  color: #fff;  
-  font-weight: 600;
-  line-height: 20px;
 }
 
-#sanidhya-chauhan {
-  font-size: 18px;
-  white-space: nowrap;
-  text-transform: uppercase;
-  color: #fff;  
+#suryansh-goyal, #sanidhya-chauhan {
+  font-size: 18px; /* Normal font size */
+  color: #fff;
   font-weight: 600;
-  line-height: 20px;
 }
 
-#suryansh-contact {
+#suryansh-contact, #sanidhya-contact {
   color: #000;
-  font-size: 19px;
+  font-size: 19px; /* Normal font size */
 }
 
-#sanidhya-contact {
-  color: #000;
-  font-size: 19px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #footer {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+  }
+
+  #f1 img {
+    height: 150px; /* Adjust size for responsiveness */
+    width: 150px;
+  }
+
+  #f2, #f4, #f5 {
+    text-align: center; /* Center text for better appearance on smaller screens */
+  }
+
+  #f2 h2 {
+    font-size: 14px; /* Adjust font size */
+  }
+
+  #f4 h4 {
+    font-size: 14px; /* Adjust font size */
+  }
+
+  #f5 h4 {
+    font-size: 14px; /* Adjust font size */
+  }
+
+  #f5 h4 ion-icon {
+    font-size: 20px; /* Adjust icon size */
+  }
+
+  #footer-heading {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  #suryansh-goyal, #sanidhya-chauhan {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  #suryansh-contact, #sanidhya-contact {
+    font-size: 16px; /* Adjust font size */
+  }
+}
+
+@media (max-width: 480px) {
+  #footer {
+    padding: 15px 5px; /* Adjust padding for very small screens */
+  }
+
+  #f1 img {
+    height: 100px; /* Further reduced size */
+    width: 100px;
+  }
+
+  #f2 h2 {
+    font-size: 12px; /* Further reduced font size */
+  }
+
+  #f4 h4 {
+    font-size: 12px; /* Further reduced font size */
+  }
+
+  #f5 h4 {
+    font-size: 12px; /* Further reduced font size */
+  }
+
+  #f5 h4 ion-icon {
+    font-size: 18px; /* Further reduced icon size */
+  }
+
+  #footer-heading {
+    font-size: 14px; /* Further reduced font size */
+  }
+
+  #suryansh-goyal, #sanidhya-chauhan {
+    font-size: 14px; /* Further reduced font size */
+  }
+
+  #suryansh-contact, #sanidhya-contact {
+    font-size: 14px; /* Further reduced font size */
+  }
 }
 
 /* Styling for registration form: */
