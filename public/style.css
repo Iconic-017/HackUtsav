@@ -407,12 +407,19 @@ video {
   width: 220px;
   border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-container:hover .guest-card {
-  transform: scale(1.05);
+.card-container:hover .guest-card,
+.guest-link:hover .guest-card {
+  animation: enlarge 0.3s forwards;
+}
+
+@keyframes enlarge {
+  to {
+    transform: scale(1.1);
+  }
 }
 
 .guest-info {
@@ -472,7 +479,6 @@ video {
     font-size: 14px;
   }
 }
-
 
 
 /* Team Header */
