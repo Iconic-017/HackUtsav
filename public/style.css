@@ -141,13 +141,14 @@ body {
 }
 
 video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: -1;
   position: fixed;
+  top: 0; 
+  left: 0; 
+  height: 100vh; 
+  width: 100vw; 
+  object-fit: cover; 
+  z-index: -1; 
 }
-
 
 
 
@@ -167,11 +168,13 @@ video {
   text-align: center;
   z-index: 10;
 }
+
 #page1 h1 {
   font-size: 7.5vw;
   font-weight: 900;
   position: relative;
 }
+
 #page1 h1::before {
   content: "HACK UTSAV";
   position: absolute;
@@ -181,6 +184,7 @@ video {
   -webkit-text-stroke: 1.5px #95c11e;
   z-index: -1;
 }
+
 #page1 h2 {
   font-size: 20px;
   font-weight: 800;
@@ -198,13 +202,12 @@ video {
   }
 }
 
-
-
 #page1 p {
   font-size: 1.2vw;
   font-weight: 500;
   width: 40%;
 }
+
 #page1 #arrow {
   height: 250px;
   width: 250px;
@@ -219,14 +222,73 @@ video {
   border-radius: 50%;
   transition: all ease 0.5s;
 }
+
 #page1 #arrow i {
   font-size: 50px;
   font-weight: 100;
 }
+
 #page1 #arrow:hover {
   scale: 0.4;
   background-color: #95c11e;
 }
+
+@media (max-width: 768px) {
+  #page1 h1 {
+    font-size: 10vw;
+  }
+
+  #page1 h1::before {
+    -webkit-text-stroke: 1px #95c11e;
+  }
+
+  #page1 h2 {
+    font-size: 16px;
+  }
+
+  #page1 p {
+    font-size: 2.5vw;
+    width: 80%;
+  }
+
+  #page1 #arrow {
+    height: 150px;
+    width: 150px;
+  }
+
+  #page1 #arrow i {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  #page1 h1 {
+    font-size: 12vw;
+  }
+
+  #page1 h1::before {
+    -webkit-text-stroke: 0.8px #95c11e;
+  }
+
+  #page1 h2 {
+    font-size: 14px;
+  }
+
+  #page1 p {
+    font-size: 3vw;
+    width: 90%;
+  }
+
+  #page1 #arrow {
+    height: 100px;
+    width: 100px;
+  }
+
+  #page1 #arrow i {
+    font-size: 20px;
+  }
+}
+
 #page2 {
   min-height: 100vh;
   width: 100%;
@@ -247,7 +309,6 @@ video {
 /* PAGE 2 */
 
 #scroller {
-  /* background-color: red; */
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
@@ -290,168 +351,206 @@ video {
   }
 }
 
-#about-us{
-  margin-top: 100px;
+/* Special Guests Section */
+#special-guests-section {
+  margin-top: 120px; /* Spacing from the previous section */
+  padding: 0 20px;
 }
 
-#about-us {
-  height: 40vh;
-  width: 100%;
-  display: flex;
-  padding: 0 50px;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-  justify-content: space-around;
-}
-#about-us img {
-  height: 220px;
-  width: 220px;
-  border-radius: 20px;
-  object-fit: cover;
-}
 #about-us-in {
-  width: 50%;
+  width: 100%;
   text-align: center;
+  margin-bottom: 30px;
 }
+
 #about-us-in h3 {
   font-size: 54px;
   font-weight: 800;
   margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
+  color: #fff; /* Ensure the text color is white or a contrasting color */
+  text-shadow: 3px 3px 6px #95c11e; /* Greenish shadow */
 }
+
 #about-us-in p {
   font-size: 20px;
   line-height: 26px;
 }
 
+/* Animation for scrolling */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#about-us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+.guest-card {
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-container:hover .guest-card {
+  transform: scale(1.05);
+}
+
+.guest-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.guest-name {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #fff; /* Ensure the text color is white */
+  text-shadow: 2px 2px 4px #95c11e; /* Greenish shadow */
+}
+
+.guest-info p {
+  color: #fff; /* White text color for paragraphs */
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #about-us-in h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .guest-card {
+    height: 180px;
+    width: 180px;
+  }
+
+  .guest-name {
+    font-size: 16px;
+  }
+
+  .guest-info p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #about-us-in h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .guest-card {
+    height: 150px;
+    width: 150px;
+  }
+
+  .guest-name {
+    font-size: 14px;
+  }
+
+  .guest-info p {
+    font-size: 14px;
+  }
+}
 
 
-.team{
+
+/* Team Header */
+.team {
   text-align: center;
   justify-content: center;
   font-size: 70px;
   padding-top: 70px;
-  background: linear-gradient(to left bottom  , #28912E , #ACE022);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
+  background: linear-gradient(to left bottom, #28912E, #ACE022);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
+/* Initial state for scrolling animation */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
 
+/* Animated state when in view */
+.fade-in-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-.name{
+/* Team Members Section Header */
+.team h2 {
+  text-align: center;
+  font-size: 70px;
+  padding-top: 70px;
+  background: linear-gradient(to left bottom, #28912E, #ACE022);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Card Containers */
+.card-container {
+  width: 30%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 350px;
-  position: relative;
-  z-index: 10;
-  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-
-
-
-
-
-
-/* CARD ROW 1 */
-#cards-container-r1{
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 70px;
-  position: relative;
-  z-index: 10;
-}
-#cards-container-r1 .card {
-  height: 80%;
-  width: 24%;
+/* Card Styling */
+.card {
+  width: 100%;
+  height: 250px;
   border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  transition: all ease 0.6s;
+  background-size: cover; /* Ensures the image covers the entire card */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  overflow: hidden; /* Ensures no overflow of content */
+  transition: all 0.6s ease;
 }
 
-#cards-container-r1 #card1 {
-  background-image: url("/images/sandu.jpg");
-}
-#cards-container-r1 #card2 {
-  background-image: url("/images/haidu.jpg");
-}
-#cards-container-r1 #card3 {
-  background-image: url("/images/surya.jpg");
-}
+/* Specific Background Images */
+#card1 { background-image: url("/images/sandu.jpg"); }
+#card2 { background-image: url("/images/haidu.jpg"); }
+#card3 { background-image: url("/images/surya.jpg"); }
+#card4 { background-image: url("/images/me.jpg"); }
+#card5 { background-image: url("/images/tyagi.jpg"); }
+#card6 { background-image: url("/images/pun.jpg"); }
+#card7 { background-image: url("/images/rit.jpg"); }
+#card8 { background-image: url("/images/naz.jpg"); }
 
-
-
-
-
-/* CARD ROW 2 */
-#cards-container-r2{
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 70px;
-  position: relative;
-  z-index: 10;
-}
-#cards-container-r2 .card {
-  height: 80%;
-  width: 24%;
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  transition: all ease 0.6s;
-}
-#cards-container-r2 #card1 {
-  background-image: url("/images/me.jpg");
-}
-#cards-container-r2 #card2 {
-  background-image: url("/images/tyagi.jpg");
-}
-#cards-container-r2 #card3 {
-  background-image: url("/images/pun.jpg");
+/* Card Hover Effect */
+.card:hover .overlay {
+  opacity: 1;
 }
 
-
-
-
-
-/* CARD ROW 3 */
-#cards-container-r3{
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 70px;
-  position: relative;
-  z-index: 10;
-}
-#cards-container-r3 .card {
-  height: 80%;
-  width: 24%;
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  transition: all ease 0.6s;
-}
-#cards-container-r3 #card1 {
-  background-image: url("/images/rit.jpg");
-}
-#cards-container-r3 #card2 {
-  background-image: url("/images/naz.jpg");
-}
-
-
-
-.overlay{
+/* Overlay Styling */
+.overlay {
   height: 100%;
   width: 100%;
   background-color: #95c11e;
@@ -461,16 +560,13 @@ text-fill-color: transparent;
   transition: all ease 0.6s;
 }
 
-.card:hover .overlay{
-  opacity: 1;
-}
-
-.overlay h4{
+.overlay h4 {
   color: black;
   font-size: 35px;
   font-weight: 700;
   white-space: nowrap;
 }
+
 .overlay p {
   font-size: 20px;
   color: black;
@@ -478,44 +574,114 @@ text-fill-color: transparent;
   font-weight: 900;
 }
 
-.overlay p a i{
+.overlay p a i {
   color: #000;
   font-size: 2000;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-container {
+    width: 45%;
+  }
+
+  .team h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    width: 100%;
+  }
+
+  .team h2 {
+    font-size: 1.2em;
+  }
+}
+
+.team-section {
+  padding: 20px;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.name {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px; /* Ensure consistent font size */
+}
+
+
 
 /* GREEN DIV */
-#green-div{
-  height: 30vh;
+#green-div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(to left bottom  , #28912E , #ACE022);
+  justify-content: center;
+  background: linear-gradient(to left bottom, #28912E, #ACE022);
+  padding: 10px 20px;
+  box-sizing: border-box;
+  min-height: 80px; /* Set a minimum height for better appearance */
 }
-#green-div h4{
-  width: 450%;
+
+#green-div h4 {
   font-size: 30px;
   color: #000;
   text-transform: uppercase;
-  line-height: 50px;
+  line-height: 40px; /* Reduced line height */
   text-align: center;
   font-weight: 800;
+  margin: 0; /* Remove margin to reduce height */
 }
 
-#green-div img{
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-
+#green-div img {
+  height: 40px; /* Reduce image height */
+  width: auto; /* Maintain aspect ratio */
 }
 
+@media (max-width: 768px) {
+  #green-div {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  #green-div h4 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  #green-div img {
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  #green-div {
+    padding: 8px;
+  }
+  
+  #green-div h4 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #green-div img {
+    height: 24px;
+  }
+}
 
 
 
 
 
 /* PAGE 3 */
-#page3{
+#page3 {
   height: 100%;
   width: 100%;
   background: #000;
@@ -523,55 +689,93 @@ text-fill-color: transparent;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 20px; 
+  box-sizing: border-box;
 }
 
-#page3 > p{
+#page3 > p {
   font-size: 35px;
   font-weight: 700;
   width: 60%;
   line-height: 45px;
   text-align: center;
+  color: #fff; 
 }
 
-
-#page3 img{
+#page3 img {
   position: absolute;
   height: 60px;
-
 }
 
-#page3 #colon1{
+#page3 #colon1 {
   left: 7%;
   top: -10%;
 }
 
-#page3 #colon2{
+#page3 #colon2 {
   left: 80%;
   top: 90%;
 }
 
+@media (max-width: 768px) {
+  #page3 > p {
+    font-size: 28px;
+    width: 80%; 
+    line-height: 36px;
+  }
 
+  #page3 img {
+    height: 40px; 
+  }
 
+  #page3 #colon1 {
+    left: 5%;
+    top: -5%;
+  }
 
+  #page3 #colon2 {
+    left: 75%;
+    top: 85%; 
+  }
+}
 
+@media (max-width: 480px) {
+  #page3 > p {
+    font-size: 20px;
+    width: 90%; 
+    line-height: 28px;
+  }
 
+  #page3 img {
+    height: 30px; 
+  }
 
+  #page3 #colon1 {
+    left: 2%;
+    top: 0%;
+  }
+
+  #page3 #colon2 {
+    left: 70%;
+    top: 75%; 
+  }
+}
 
 
 
 /* PAGE 4 */
-
 #page4 {
-  height: 100vh;
+  height: auto; 
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: 40px;
+  gap: 20px; 
   z-index: 10;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 #page4 .prize {
@@ -580,51 +784,54 @@ text-fill-color: transparent;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  max-width: 300px; 
+  flex: 1 1 auto; 
 }
 
 #page4 .prize h2 {
-  font-size: 7.5vw;
+  font-size: 5vw; /* Adjust font size for responsiveness */
   font-weight: 800;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Adjust margin for responsiveness */
 }
 
 #page4 .prize h2::before {
   content: attr(data-prize);
   position: absolute;
   color: #000;
-  top: -5px;
-  left: -5px;
-  -webkit-text-stroke: 1.5px #95c11e;
+  top: 3px; /* Adjusted top for a slight shadow */
+  left: 3px; /* Adjusted left for a slight shadow */
+  -webkit-text-stroke: 1px #95c11e; /* Adjust text stroke */
   z-index: -1;
 }
 
 #page4 .prize .details {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
+  padding: 15px; /* Adjust padding for responsiveness */
   border-radius: 10px;
-  width: 80%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-size: 1.5vw;
+  width: 100%; /* Full width within the card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 3vw; /* Adjust font size for responsiveness */
 }
 
-#page4 .details {
-  transition: all ease 0.6;
-}
-
-#page4 .details:hover{
+#page4 .details:hover {
   background: linear-gradient(to left top, #28912E, #ACE022);
-  box-shadow: 0 0 30px #ACE022;
+  box-shadow: 0 0 20px #ACE022;
   transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-#page4 .details h3{
-  background: linear-gradient(to left top  , #ff2a00 , #f6ff52);
+#page4 .details p {
+  font-size: 3vw; 
+  margin: 0; 
+}
+
+#page4 .details #prize-amt {
+  background: linear-gradient(to left top, #ff2a00, #f6ff52);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-   text-fill-color: transparent; 
-   font-size: 35px;
+  text-fill-color: transparent;
+  font-size: 35px;
 }
 
 #page4 .details {
@@ -633,15 +840,12 @@ text-fill-color: transparent;
 
 .pri {
   text-align: center;
-  font-size: 3rem;
-  margin-top: 50px; 
+  font-size: 2rem; 
+  margin-top: 30px; 
   animation: glow 1.5s infinite alternate;
 }
 
-.pri h1{
-  -webkit-text-stroke: 1.5px #95c11e;
-}
-
+/* Glow Animation */
 @keyframes glow {
   from {
     text-shadow: 0 0 10px #95c11e;
@@ -651,46 +855,137 @@ text-fill-color: transparent;
   }
 }
 
-#spacer {
-  height: 100px;
+.pri h1 {
+  -webkit-text-stroke: 1px #95c11e; 
 }
 
+/* Scrolling Animation */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#spacer {
+  height: 50px; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #page4 {
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px;
+  }
+
+  #page4 .prize h2 {
+    font-size: 6vw; 
+  }
+
+  #page4 .prize h2::before {
+    font-size: 6vw; 
+    top: 2px; /* Adjusted top for a slight shadow */
+    left: 2px; /* Adjusted left for a slight shadow */
+    -webkit-text-stroke: 0.8px #95c11e; /* Adjust text stroke for smaller screens */
+  }
+
+  #page4 .prize .details {
+    width: 90%; 
+    font-size: 5vw; 
+  }
+
+  #page4 .details p {
+    font-size: 5vw; 
+  }
+
+  #page4 .details #prize-amt {
+    font-size: 35px; 
+  }
+
+  .pri {
+    font-size: 1.5rem; 
+    margin-top: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  #page4 .prize h2 {
+    font-size: 7vw; 
+  }
+
+  #page4 .prize h2::before {
+    font-size: 7vw;
+    top: 2px; /* Adjusted top for a slight shadow */
+    left: 2px; /* Adjusted left for a slight shadow */
+    -webkit-text-stroke: 0.6px #95c11e; /* Adjust text stroke for smaller screens */
+  }
+
+  #page4 .prize .details {
+    width: 100%;
+    font-size: 6vw; 
+  }
+
+  #page4 .details p {
+    font-size: 6vw; 
+  }
+
+  #page4 .details #prize-amt {
+    font-size: 30px; 
+  }
+
+  .pri {
+    font-size: 1.2rem; /* Further adjust font size */
+    margin-top: 15px; /* Further reduce margin */
+  }
+}
 
 /* FOOTER */
-
 #footer {
-  height: 40vh;
   width: 100%;
   background: linear-gradient(to left bottom, #119f3a, #ACE022);
-  position: relative;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
   align-items: center;
-  justify-content: flex-start;
-  gap: 150px;  /* Consider responsiveness */
-  padding: 0 100px;  /* This padding might need to be adjusted on smaller screens */
 }
 
 #footer > img {
   position: absolute;
   left: 0;
+  top: 0;
   height: 100%;
-  width: 100%;  /* Ensure the image covers the whole footer area */
-  object-fit: cover;  /* This will prevent the image from distorting */
+  width: 100%;
+  object-fit: cover;
   z-index: 0;
 }
 
 #f1 img {
-  height: 250px;
-  width: 250px;  /* Added to maintain aspect ratio */
-  border-radius: 50%;  /* Use percentage to create perfect circle */
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
   border: 2px solid white;
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7), 0 0 30px 15px rgba(255, 255, 255, 0.7);
 }
 
-#f1, #f2, #f4 {
-  width: auto;  /* Changed from 100px to auto to allow content-based sizing */
+#f1, #f2, #f4, #f5 {
   position: relative;
-  z-index: 0;
+  z-index: 1;
+  text-align: center;
+  margin: 10px;
+}
+
+#f2 {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  align-items: center; /* Center align the links */
 }
 
 #f2 h2 {
@@ -698,7 +993,8 @@ text-fill-color: transparent;
   color: black;
   font-weight: 400;
   margin-bottom: 8px;
-  padding-left: 20px; 
+  padding-left: 20px;
+  font-size: 16px;
 }
 
 #f2 i {
@@ -707,33 +1003,39 @@ text-fill-color: transparent;
 
 #f4 h4 {
   font-size: 18px;
-  white-space: nowrap;
   text-transform: uppercase;
-  color: black;  /* Corrected from columns: black */
-  font-weight: 600;
+  color: black;
+  font-weight: bold;
   margin-bottom: 8px;
   line-height: 20px;
-  padding-left: 20px;  /* Reduced padding for better alignment */
+  padding-left: 20px;
 }
 
+#f5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the contact section */
+}
 
-/* Contact us section */
 #f5 h4 {
   display: flex;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  align-items: center; /* Center align the text and icons */
 }
 
 #f5 h4 .contact-item {
   display: flex;
-  align-items: center;
-  margin-bottom: 5px; 
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px; /* Adjust space between items */
+  padding: 5px 0; /* Add padding for better spacing */
 }
 
 #f5 h4 ion-icon {
   color: #000;
   font-size: 25px;
-  margin-right: 10px; 
+  margin-right: 10px; /* Space between icon and text */
 }
 
 #f5 h4 .contact-details {
@@ -743,50 +1045,85 @@ text-fill-color: transparent;
 
 #f5 h4 .contact-details p {
   margin: 0;
-}
-
-#f5 {
-  display: flex;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  line-height: 1.2; /* Improve readability and alignment */
 }
 
 #footer-heading {
   font-size: 18px;
-  white-space: nowrap;
-  text-transform: uppercase;
-  color: black;  
-  font-weight: 600;
-  line-height: 20px;
-
-}
-#suryansh-goyal {
-  font-size: 18px;
-  white-space: nowrap;
-  text-transform: uppercase;
-  color: #fff;  
-  font-weight: 600;
-  line-height: 20px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 10px; /* Space between heading and contact items */
 }
 
-#sanidhya-chauhan {
-  font-size: 18px;
-  white-space: nowrap;
-  text-transform: uppercase;
-  color: #fff;  
-  font-weight: 600;
-  line-height: 20px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  #f1 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #f2, #f4, #f5 {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center align the content */
+    align-items: center;
+  }
+
+  #f1 img {
+    height: 100px;
+    width: 100px;
+  }
+
+  #f2 h2, #f4 h4, #f5 h4, #footer-heading, #suryansh-goyal, #sanidhya-chauhan, #suryansh-contact, #sanidhya-contact {
+    font-size: 14px;
+  }
+
+  #f5 h4 ion-icon {
+    font-size: 20px;
+  }
 }
 
-#suryansh-contact {
-  color: #000;
-  font-size: 19px;
+@media (max-width: 480px) {
+  #footer {
+    padding: 15px 5px;
+  }
+
+  #f1 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #f2, #f4, #f5 {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center align the content */
+    align-items: center;
+  }
+
+  #f1 img {
+    height: 80px;
+    width: 80px;
+  }
+
+  #f2 h2, #f4 h4, #f5 h4, #footer-heading, #suryansh-goyal, #sanidhya-chauhan, #suryansh-contact, #sanidhya-contact {
+    font-size: 12px;
+  }
+
+  #f5 h4 ion-icon {
+    font-size: 18px;
+  }
 }
 
-#sanidhya-contact {
-  color: #000;
-  font-size: 19px;
-}
 
 /* Styling for registration form: */
 .registration-body {
@@ -979,5 +1316,50 @@ text-fill-color: transparent;
 
   .input-box {
     width: 290px;
+  }
+}
+
+.main-navbar {
+  width: 100%;
+  background-color: #fff; /* Adjust as needed */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.navbar img {
+  height: 40px; /* Adjust logo size as needed */
+}
+
+.navbar h4 {
+  margin: 0;
+}
+
+.navbar a {
+  color: #fff; 
+  font-size: 16px; /* Adjust font size */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.navbar a:hover {
+  color: #28912E; /* Adjust hover color as needed */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: flex-start; /* Align items to the start */
+  }
+
+  .navbar h4 {
+      margin-bottom: 10px; /* Add spacing between items on small screens */
+  }
+
+  .navbar a {
+      font-size: 14px; /* Adjust font size for small screens */
   }
 }
