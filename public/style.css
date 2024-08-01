@@ -764,7 +764,6 @@ video {
 
 
 /* PAGE 4 */
-
 #page4 {
   height: auto; 
   width: 100%;
@@ -846,10 +845,7 @@ video {
   animation: glow 1.5s infinite alternate;
 }
 
-.pri h1 {
-  -webkit-text-stroke: 1px #95c11e; 
-}
-
+/* Glow Animation */
 @keyframes glow {
   from {
     text-shadow: 0 0 10px #95c11e;
@@ -859,10 +855,27 @@ video {
   }
 }
 
+.pri h1 {
+  -webkit-text-stroke: 1px #95c11e; 
+}
+
+/* Scrolling Animation */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 #spacer {
   height: 50px; 
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   #page4 {
     flex-direction: column; 
