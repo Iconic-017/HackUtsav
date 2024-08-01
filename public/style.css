@@ -923,11 +923,12 @@ text-fill-color: transparent;
   width: 100%;
   background: linear-gradient(to left bottom, #119f3a, #ACE022);
   display: flex;
-  flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px 50px; /* Adjust padding for larger screens */
+  padding: 20px;
   box-sizing: border-box;
   position: relative;
+  align-items: center;
 }
 
 #footer > img {
@@ -941,7 +942,7 @@ text-fill-color: transparent;
 }
 
 #f1 img {
-  height: 150px; /* Adjust size for responsiveness */
+  height: 150px;
   width: 150px;
   border-radius: 50%;
   border: 2px solid white;
@@ -952,7 +953,13 @@ text-fill-color: transparent;
   position: relative;
   z-index: 1;
   text-align: center;
-  margin: 20px; /* Add margin for spacing */
+  margin: 10px;
+}
+
+#f2 {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  align-items: center; /* Center align the links */
 }
 
 #f2 h2 {
@@ -983,18 +990,20 @@ text-fill-color: transparent;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
+  align-items: flex-start; /* Align items to the start for better consistency */
 }
 
 #f5 h4 .contact-item {
   display: flex;
-  align-items: center;
-  margin-bottom: 5px;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px; /* Adjust space between items */
+  padding: 5px 0; /* Add padding for better spacing */
 }
 
 #f5 h4 ion-icon {
   color: #000;
   font-size: 25px;
-  margin-right: 10px;
+  margin-right: 10px; /* Space between icon and text */
 }
 
 #f5 h4 .contact-details {
@@ -1005,32 +1014,36 @@ text-fill-color: transparent;
 #f5 h4 .contact-details p {
   margin: 0;
   font-weight: bold;
+  line-height: 1.2; /* Improve readability and alignment */
 }
 
 #footer-heading {
   font-size: 18px;
   color: black;
   font-weight: bold;
-}
-
-#suryansh-goyal, #sanidhya-chauhan {
-  font-size: 18px;
-  color: #fff;
-  font-weight: bold;
-}
-
-#suryansh-contact, #sanidhya-contact {
-  color: #000;
-  font-size: 19px;
-  font-weight: bold;
+  margin-bottom: 10px; /* Space between heading and contact items */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   #footer {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     padding: 20px 10px;
+  }
+
+  #f1 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #f2, #f4, #f5 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   #f1 img {
@@ -1043,13 +1056,26 @@ text-fill-color: transparent;
   }
 
   #f5 h4 ion-icon {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
 @media (max-width: 480px) {
   #footer {
     padding: 15px 5px;
+  }
+
+  #f1 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #f2, #f4, #f5 {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   #f1 img {
