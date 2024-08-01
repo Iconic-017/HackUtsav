@@ -351,36 +351,6 @@ video {
   }
 }
 
-/* Responsive Styling */
-@media (max-width: 1200px) {
-  #scroller h4 {
-    font-size: 100px;
-    margin-right: 15px;
-  }
-}
-
-@media (max-width: 992px) {
-  #scroller h4 {
-    font-size: 80px;
-    margin-right: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  #scroller h4 {
-    font-size: 60px;
-    margin-right: 8px;
-  }
-}
-
-@media (max-width: 576px) {
-  #scroller h4 {
-    font-size: 40px;
-    margin-right: 5px;
-  }
-}
-
-
 #about-us {
   margin-top: 100px;
   height: 40vh;
@@ -783,14 +753,14 @@ text-fill-color: transparent;
 /* PAGE 4 */
 
 #page4 {
-  height: auto; /* Adjust height to fit content */
+  height: auto; 
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: 20px; /* Adjust gap for smaller screens */
+  gap: 20px; 
   z-index: 10;
   padding: 20px;
   box-sizing: border-box;
@@ -802,8 +772,8 @@ text-fill-color: transparent;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  max-width: 300px; /* Limit the width to prevent large cards on wider screens */
-  flex: 1 1 auto; /* Allow flexibility in sizing */
+  max-width: 300px; 
+  flex: 1 1 auto; 
 }
 
 #page4 .prize h2 {
@@ -817,8 +787,8 @@ text-fill-color: transparent;
   content: attr(data-prize);
   position: absolute;
   color: #000;
-  top: -5px;
-  left: -5px;
+  top: 3px; /* Adjusted top for a slight shadow */
+  left: 3px; /* Adjusted left for a slight shadow */
   -webkit-text-stroke: 1px #95c11e; /* Adjust text stroke */
   z-index: -1;
 }
@@ -839,8 +809,8 @@ text-fill-color: transparent;
 }
 
 #page4 .details p {
-  font-size: 3vw; /* Adjusted font size for paragraph */
-  margin: 0; /* Remove default margin */
+  font-size: 3vw; 
+  margin: 0; 
 }
 
 #page4 .details #prize-amt {
@@ -849,7 +819,7 @@ text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  font-size: 35px; /* Increased font size for prize amounts */
+  font-size: 35px;
 }
 
 #page4 .details {
@@ -858,13 +828,13 @@ text-fill-color: transparent;
 
 .pri {
   text-align: center;
-  font-size: 2rem; /* Adjust font size for headings */
-  margin-top: 30px; /* Adjust margin for spacing */
+  font-size: 2rem; 
+  margin-top: 30px; 
   animation: glow 1.5s infinite alternate;
 }
 
 .pri h1 {
-  -webkit-text-stroke: 1px #95c11e; /* Adjust text stroke */
+  -webkit-text-stroke: 1px #95c11e; 
 }
 
 @keyframes glow {
@@ -877,55 +847,69 @@ text-fill-color: transparent;
 }
 
 #spacer {
-  height: 50px; /* Adjust spacer height */
+  height: 50px; 
 }
 
 @media (max-width: 768px) {
   #page4 {
-    flex-direction: column; /* Stack prizes vertically on smaller screens */
+    flex-direction: column; 
     align-items: center;
     gap: 20px;
   }
 
   #page4 .prize h2 {
-    font-size: 6vw; /* Further reduce font size for smaller screens */
+    font-size: 6vw; 
+  }
+
+  #page4 .prize h2::before {
+    font-size: 6vw; 
+    top: 2px; /* Adjusted top for a slight shadow */
+    left: 2px; /* Adjusted left for a slight shadow */
+    -webkit-text-stroke: 0.8px #95c11e; /* Adjust text stroke for smaller screens */
   }
 
   #page4 .prize .details {
-    width: 90%; /* Better fit */
-    font-size: 5vw; /* Further reduce font size for responsiveness */
+    width: 90%; 
+    font-size: 5vw; 
   }
 
   #page4 .details p {
-    font-size: 5vw; /* Adjusted font size for paragraph */
+    font-size: 5vw; 
   }
 
   #page4 .details #prize-amt {
-    font-size: 35px; /* Adjust font size for prize amounts */
+    font-size: 35px; 
   }
 
   .pri {
-    font-size: 1.5rem; /* Adjust font size for headings */
-    margin-top: 20px; /* Adjust margin */
+    font-size: 1.5rem; 
+    margin-top: 20px; 
   }
 }
 
 @media (max-width: 480px) {
   #page4 .prize h2 {
-    font-size: 7vw; /* Further adjust font size for very small screens */
+    font-size: 7vw; 
+  }
+
+  #page4 .prize h2::before {
+    font-size: 7vw;
+    top: 2px; /* Adjusted top for a slight shadow */
+    left: 2px; /* Adjusted left for a slight shadow */
+    -webkit-text-stroke: 0.6px #95c11e; /* Adjust text stroke for smaller screens */
   }
 
   #page4 .prize .details {
-    width: 100%; /* Full width */
-    font-size: 6vw; /* Further adjust font size */
+    width: 100%;
+    font-size: 6vw; 
   }
 
   #page4 .details p {
-    font-size: 6vw; /* Adjusted font size for paragraph */
+    font-size: 6vw; 
   }
 
   #page4 .details #prize-amt {
-    font-size: 30px; /* Further adjusted font size for prize amounts */
+    font-size: 30px; 
   }
 
   .pri {
@@ -933,6 +917,7 @@ text-fill-color: transparent;
     margin-top: 15px; /* Further reduce margin */
   }
 }
+
 
 
 /* FOOTER */
