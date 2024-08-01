@@ -918,26 +918,22 @@ text-fill-color: transparent;
   }
 }
 
-
-
 /* FOOTER */
-
 #footer {
-  height: auto; /* Adjust height to fit content */
   width: 100%;
   background: linear-gradient(to left bottom, #119f3a, #ACE022);
-  position: relative;
   display: flex;
-  flex-direction: row; /* Horizontal layout for larger screens */
-  align-items: center;
-  justify-content: space-between; /* Space out items */
-  padding: 20px 100px; /* Large padding for larger screens */
+  flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+  justify-content: space-between;
+  padding: 20px 50px; /* Adjust padding for larger screens */
   box-sizing: border-box;
+  position: relative;
 }
 
 #footer > img {
   position: absolute;
   left: 0;
+  top: 0;
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -945,8 +941,8 @@ text-fill-color: transparent;
 }
 
 #f1 img {
-  height: 250px; /* Normal size for larger screens */
-  width: 250px; 
+  height: 150px; /* Adjust size for responsiveness */
+  width: 150px;
   border-radius: 50%;
   border: 2px solid white;
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7), 0 0 30px 15px rgba(255, 255, 255, 0.7);
@@ -954,9 +950,9 @@ text-fill-color: transparent;
 
 #f1, #f2, #f4, #f5 {
   position: relative;
-  z-index: 1; /* Ensure content is above the background image */
-  text-align: center; /* Center-align text */
-  margin: 0 20px; /* Add margin for spacing */
+  z-index: 1;
+  text-align: center;
+  margin: 20px; /* Add margin for spacing */
 }
 
 #f2 h2 {
@@ -965,7 +961,7 @@ text-fill-color: transparent;
   font-weight: 400;
   margin-bottom: 8px;
   padding-left: 20px;
-  font-size: 16px; /* Normal font size */
+  font-size: 16px;
 }
 
 #f2 i {
@@ -973,11 +969,10 @@ text-fill-color: transparent;
 }
 
 #f4 h4 {
-  font-size: 18px; /* Normal font size */
-  white-space: nowrap;
+  font-size: 18px;
   text-transform: uppercase;
   color: black;
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 8px;
   line-height: 20px;
   padding-left: 20px;
@@ -987,7 +982,7 @@ text-fill-color: transparent;
   display: flex;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
-  font-size: 16px; /* Normal font size */
+  font-size: 16px;
 }
 
 #f5 h4 .contact-item {
@@ -998,7 +993,7 @@ text-fill-color: transparent;
 
 #f5 h4 ion-icon {
   color: #000;
-  font-size: 25px; /* Normal icon size */
+  font-size: 25px;
   margin-right: 10px;
 }
 
@@ -1009,110 +1004,68 @@ text-fill-color: transparent;
 
 #f5 h4 .contact-details p {
   margin: 0;
+  font-weight: bold;
 }
 
 #footer-heading {
-  font-size: 18px; /* Normal font size */
+  font-size: 18px;
   color: black;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 #suryansh-goyal, #sanidhya-chauhan {
-  font-size: 18px; /* Normal font size */
+  font-size: 18px;
   color: #fff;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 #suryansh-contact, #sanidhya-contact {
   color: #000;
-  font-size: 19px; /* Normal font size */
+  font-size: 19px;
+  font-weight: bold;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   #footer {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px 10px; /* Adjust padding for smaller screens */
+    padding: 20px 10px;
   }
 
   #f1 img {
-    height: 150px; /* Adjust size for responsiveness */
-    width: 150px;
+    height: 100px;
+    width: 100px;
   }
 
-  #f2, #f4, #f5 {
-    text-align: center; /* Center text for better appearance on smaller screens */
-  }
-
-  #f2 h2 {
-    font-size: 14px; /* Adjust font size */
-  }
-
-  #f4 h4 {
-    font-size: 14px; /* Adjust font size */
-  }
-
-  #f5 h4 {
-    font-size: 14px; /* Adjust font size */
+  #f2 h2, #f4 h4, #f5 h4, #footer-heading, #suryansh-goyal, #sanidhya-chauhan, #suryansh-contact, #sanidhya-contact {
+    font-size: 14px;
   }
 
   #f5 h4 ion-icon {
-    font-size: 20px; /* Adjust icon size */
-  }
-
-  #footer-heading {
-    font-size: 16px; /* Adjust font size */
-  }
-
-  #suryansh-goyal, #sanidhya-chauhan {
-    font-size: 16px; /* Adjust font size */
-  }
-
-  #suryansh-contact, #sanidhya-contact {
-    font-size: 16px; /* Adjust font size */
+    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
   #footer {
-    padding: 15px 5px; /* Adjust padding for very small screens */
+    padding: 15px 5px;
   }
 
   #f1 img {
-    height: 100px; /* Further reduced size */
-    width: 100px;
+    height: 80px;
+    width: 80px;
   }
 
-  #f2 h2 {
-    font-size: 12px; /* Further reduced font size */
-  }
-
-  #f4 h4 {
-    font-size: 12px; /* Further reduced font size */
-  }
-
-  #f5 h4 {
-    font-size: 12px; /* Further reduced font size */
+  #f2 h2, #f4 h4, #f5 h4, #footer-heading, #suryansh-goyal, #sanidhya-chauhan, #suryansh-contact, #sanidhya-contact {
+    font-size: 12px;
   }
 
   #f5 h4 ion-icon {
-    font-size: 18px; /* Further reduced icon size */
-  }
-
-  #footer-heading {
-    font-size: 14px; /* Further reduced font size */
-  }
-
-  #suryansh-goyal, #sanidhya-chauhan {
-    font-size: 14px; /* Further reduced font size */
-  }
-
-  #suryansh-contact, #sanidhya-contact {
-    font-size: 14px; /* Further reduced font size */
+    font-size: 18px;
   }
 }
+
 
 /* Styling for registration form: */
 .registration-body {
