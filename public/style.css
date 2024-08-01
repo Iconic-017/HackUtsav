@@ -141,13 +141,13 @@ body {
 }
 
 video {
-  position: fixed; /* Keep the video fixed to the viewport */
-  top: 0; /* Position it at the top */
-  left: 0; /* Position it at the left */
-  height: 100vh; /* Cover the full height of the viewport */
-  width: 100vw; /* Cover the full width of the viewport */
-  object-fit: cover; /* Ensure the video covers the viewport without distortion */
-  z-index: -1; /* Place the video behind other content */
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  height: 100vh; 
+  width: 100vw; 
+  object-fit: cover; 
+  z-index: -1; 
 }
 
 
@@ -350,6 +350,36 @@ video {
     transform: translateX(-100%);
   }
 }
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+  #scroller h4 {
+    font-size: 100px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  #scroller h4 {
+    font-size: 80px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #scroller h4 {
+    font-size: 60px;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  #scroller h4 {
+    font-size: 40px;
+    margin-right: 5px;
+  }
+}
+
 
 #about-us {
   margin-top: 100px;
