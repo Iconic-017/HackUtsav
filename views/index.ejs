@@ -34,27 +34,27 @@
           <h3>SPECIAL GUESTS</h3>
           <p></p>
         </div>
-      
+
         <div id="about-us">
           <div class="card-container">
-            <img src="/images/gaurav.png" alt="Dr. Gaurav Gupta" class="guest-card"/>
+            <img src="/images/gaurav.png" alt="Dr. Gaurav Gupta" class="guest-card" />
             <div class="guest-info">
               <h4 class="guest-name">Dr. Gaurav Gupta</h4>
               <p>Digital Forensics Expert | Ministry of Electronics and IT</p>
             </div>
           </div>
-      
+
           <div class="card-container">
-            <img src="/images/rohit.png" alt="Mr. Rohit Sardana" class="guest-card"/>
+            <img src="/images/rohit.png" alt="Mr. Rohit Sardana" class="guest-card" />
             <div class="guest-info">
               <h4 class="guest-name">Mr. Rohit Sardana</h4>
               <p>CO-Founder & CEO - Reskill, Incubate IND</p>
               <p>Business Head - BW Disrupt & Digital Market Asia</p>
             </div>
           </div>
-      
+
           <div class="card-container">
-            <img src="/images/ankur.png" alt="Dr. Ankur Arora" class="guest-card"/>
+            <img src="/images/ankur.png" alt="Dr. Ankur Arora" class="guest-card" />
             <div class="guest-info">
               <h4 class="guest-name">Dr. Ankur Arora</h4>
               <p>Vice President - AI and Data Science</p>
@@ -63,17 +63,17 @@
           </div>
         </div>
       </div>
-      
 
 
 
-      <div class="team-section">
-        <div class="team">
+
+      <div class="team-section fade-in-scroll">
+        <div class="team fade-in-scroll">
           <h2>Our Team Members</h2>
         </div>
-      
+
         <div class="cards-wrapper">
-          <div class="card-container" id="card1-container">
+          <div class="card-container fade-in-scroll " id="card1-container">
             <div class="card" id="card1">
               <div class="overlay">
                 <h4>Vice President</h4>
@@ -83,7 +83,7 @@
               <h4>Sanidhya Chauhan<br>(Vice President)</h4>
             </div>
           </div>
-      
+
           <div class="card-container" id="card2-container">
             <div class="card" id="card2">
               <div class="overlay">
@@ -94,7 +94,7 @@
               <h4>S.M.Haider<br>(Vice President)</h4>
             </div>
           </div>
-      
+
           <div class="card-container" id="card3-container">
             <div class="card" id="card3">
               <div class="overlay">
@@ -105,7 +105,7 @@
               <h4>Suryansh Goyal<br>(Management Head)</h4>
             </div>
           </div>
-      
+
           <div class="card-container" id="card4-container">
             <div class="card" id="card4">
               <div class="overlay">
@@ -116,7 +116,7 @@
               <h4>Ayush Saini<br>(Website Team Head)</h4>
             </div>
           </div>
-      
+
           <div class="card-container" id="card5-container">
             <div class="card" id="card5">
               <div class="overlay">
@@ -127,7 +127,7 @@
               <h4>Ayush Tyagi<br>(Website Team Head)</h4>
             </div>
           </div>
-      
+
           <div class="card-container" id="card6-container">
             <div class="card" id="card6">
               <div class="overlay">
@@ -138,7 +138,7 @@
               <h4>Puneet Kumar<br>(Marketing Head)</h4>
             </div>
           </div>
-      
+
           <div class="card-container" id="card7-container">
             <div class="card" id="card7">
               <div class="overlay">
@@ -149,7 +149,7 @@
               <h4>Ritika<br>(Graphic Team Head)</h4>
             </div>
           </div>
-      
+
           <div class="card-container" id="card8-container">
             <div class="card" id="card8">
               <div class="overlay">
@@ -176,7 +176,10 @@
 
     <div id="page3">
       <p>
-        The Hackउत्सव Cryptic Hunt Event promises an unforgettable experience filled with thrilling puzzles and games that will challenge your mind and foster team spirit. Participants can look forward to solving engaging puzzles and riddles throughout the night. Exciting goodies will be distributed as rewards, adding an extra layer of excitement to the event. To ensure everyone stays energized, delicious meals and snacks will be provided.
+        The Hackउत्सव Cryptic Hunt Event promises an unforgettable experience filled with thrilling puzzles and games
+        that will challenge your mind and foster team spirit. Participants can look forward to solving engaging puzzles
+        and riddles throughout the night. Exciting goodies will be distributed as rewards, adding an extra layer of
+        excitement to the event. To ensure everyone stays energized, delicious meals and snacks will be provided.
       </p>
       <img id="colon1" src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
       <img id="colon2" src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg" alt="" />
@@ -255,7 +258,7 @@
       });
 
       // Event listener for Team button to scroll into team members section
-      
+
       const teamButton = document.getElementById('team-button');
 
       teamButton.addEventListener('click', function (event) {
@@ -279,6 +282,24 @@
           crsr.style.backgroundColor = "#95C11E";
         });
       });
+      document.addEventListener('DOMContentLoaded', function () {
+        // Create an intersection observer instance
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+            } else {
+              entry.target.classList.remove('in-view');
+            }
+          });
+        }, { threshold: 0.1 }); // Adjust threshold as needed
+
+        // Observe the elements with the class 'fade-in-scroll'
+        document.querySelectorAll('.fade-in-scroll').forEach(element => {
+          observer.observe(element);
+        });
+      });
+
 
       gsap.to("#nav", {
         backgroundColor: "#000",

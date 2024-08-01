@@ -475,131 +475,111 @@ video {
 
 
 
-.team{
+/* Team Header */
+.team {
   text-align: center;
   justify-content: center;
   font-size: 70px;
   padding-top: 70px;
-  background: linear-gradient(to left bottom  , #28912E , #ACE022);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
+  background: linear-gradient(to left bottom, #28912E, #ACE022);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
+/* Initial state for scrolling animation */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
 
+/* Animated state when in view */
+.fade-in-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-.name{
+/* Team Members Section Header */
+.team h2 {
+  text-align: center;
+  font-size: 70px;
+  padding-top: 70px;
+  background: linear-gradient(to left bottom, #28912E, #ACE022);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Card Containers */
+.card-container {
+  width: 30%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 350px;
-  position: relative;
-  z-index: 10;
+  margin-bottom: 20px;
+}
+
+/* Card Styling */
+.card {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+  background-size: cover; /* Ensures the image covers the entire card */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  overflow: hidden; /* Ensures no overflow of content */
+  transition: all 0.6s ease;
+}
+
+/* Specific Background Images */
+#card1 { background-image: url("/images/sandu.jpg"); }
+#card2 { background-image: url("/images/haidu.jpg"); }
+#card3 { background-image: url("/images/surya.jpg"); }
+#card4 { background-image: url("/images/me.jpg"); }
+#card5 { background-image: url("/images/tyagi.jpg"); }
+#card6 { background-image: url("/images/pun.jpg"); }
+#card7 { background-image: url("/images/rit.jpg"); }
+#card8 { background-image: url("/images/naz.jpg"); }
+
+/* Card Hover Effect */
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/* Overlay Styling */
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  padding: 10px;
+  padding-top: 95px;
+  opacity: 0;
+  transition: all ease 0.6s;
+}
+
+.overlay h4 {
+  color: black;
+  font-size: 35px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.overlay p {
   font-size: 20px;
+  color: black;
+  padding-top: 10px;
+  font-weight: 900;
 }
 
-
-
-
-
-.cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+.overlay p a i {
+  color: #000;
+  font-size: 2000;
 }
 
-.card-container {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.card {
-  width: 100%;
-  height: 250px;
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  transition: all 0.6s ease;
-}
-
-#card1 { background-image: url("/images/sandu.jpg"); }
-#card2 { background-image: url("/images/haidu.jpg"); }
-#card3 { background-image: url("/images/surya.jpg"); }
-#card4 { background-image: url("/images/me.jpg"); }
-#card5 { background-image: url("/images/tyagi.jpg"); }
-#card6 { background-image: url("/images/pun.jpg"); }
-#card7 { background-image: url("/images/rit.jpg"); }
-#card8 { background-image: url("/images/naz.jpg"); }
-
-.name {
-  text-align: center;
-  margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .card-container {
-    width: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .card-container {
-    width: 100%;
-  }
-}.team-section {
-  padding: 20px;
-}
-
-.team {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.card-container {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.card {
-  width: 100%;
-  height: 250px;
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  transition: all 0.6s ease;
-}
-
-#card1 { background-image: url("/images/sandu.jpg"); }
-#card2 { background-image: url("/images/haidu.jpg"); }
-#card3 { background-image: url("/images/surya.jpg"); }
-#card4 { background-image: url("/images/me.jpg"); }
-#card5 { background-image: url("/images/tyagi.jpg"); }
-#card6 { background-image: url("/images/pun.jpg"); }
-#card7 { background-image: url("/images/rit.jpg"); }
-#card8 { background-image: url("/images/naz.jpg"); }
-
-.name {
-  text-align: center;
-  margin-top: 10px;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
   .card-container {
     width: 45%;
@@ -620,40 +600,23 @@ text-fill-color: transparent;
   }
 }
 
-
-
-
-.overlay{
-  height: 100%;
-  width: 100%;
-  background-color: #95c11e;
-  padding: 10px;
-  padding-top: 95px;
-  opacity: 0;
-  transition: all ease 0.6s;
+.team-section {
+  padding: 20px;
 }
 
-.card:hover .overlay{
-  opacity: 1;
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.overlay h4{
-  color: black;
-  font-size: 35px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-.overlay p {
-  font-size: 20px;
-  color: black;
-  padding-top: 10px;
-  font-weight: 900;
+.name {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px; /* Ensure consistent font size */
 }
 
-.overlay p a i{
-  color: #000;
-  font-size: 2000;
-}
 
 
 /* GREEN DIV */
