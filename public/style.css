@@ -351,75 +351,125 @@ video {
   }
 }
 
-#about-us {
-  margin-top: 100px;
-  height: 40vh;
-  width: 100%;
-  display: flex;
-  padding: 0 50px;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-  justify-content: space-around;
+/* Special Guests Section */
+#special-guests-section {
+  margin-top: 120px; /* Spacing from the previous section */
+  padding: 0 20px;
 }
-#about-us img {
-  height: 220px;
-  width: 220px;
-  border-radius: 20px;
-  object-fit: cover;
-}
+
 #about-us-in {
-  width: 50%;
+  width: 100%;
   text-align: center;
+  margin-bottom: 30px;
 }
+
 #about-us-in h3 {
   font-size: 54px;
   font-weight: 800;
   margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
+  color: #fff; /* Ensure the text color is white or a contrasting color */
+  text-shadow: 3px 3px 6px #95c11e; /* Greenish shadow */
 }
+
 #about-us-in p {
   font-size: 20px;
   line-height: 26px;
 }
 
+/* Animation for scrolling */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#about-us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+.guest-card {
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-container:hover .guest-card {
+  transform: scale(1.05);
+}
+
+.guest-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.guest-name {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #fff; /* Ensure the text color is white */
+  text-shadow: 2px 2px 4px #95c11e; /* Greenish shadow */
+}
+
+.guest-info p {
+  color: #fff; /* White text color for paragraphs */
+  margin: 5px 0;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  #about-us {
-    flex-direction: column;
-    height: auto;
-    padding: 0 20px;
-  }
-  #about-us img {
-    height: 180px;
-    width: 180px;
-    margin-bottom: 20px;
-  }
-  #about-us-in {
-    width: 100%;
-    text-align: center;
-  }
   #about-us-in h3 {
     font-size: 32px;
     margin-bottom: 20px;
   }
-  #about-us-in p {
-    font-size: 18px;
-    line-height: 24px;
+
+  .guest-card {
+    height: 180px;
+    width: 180px;
+  }
+
+  .guest-name {
+    font-size: 16px;
+  }
+
+  .guest-info p {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
-  #about-us img {
-    height: 150px;
-    width: 150px;
-    margin-bottom: 20px;
-  }
   #about-us-in h3 {
     font-size: 28px;
     margin-bottom: 15px;
   }
-  #about-us-in p {
-    font-size: 16px;
-    line-height: 22px;
+
+  .guest-card {
+    height: 150px;
+    width: 150px;
+  }
+
+  .guest-name {
+    font-size: 14px;
+  }
+
+  .guest-info p {
+    font-size: 14px;
   }
 }
 
