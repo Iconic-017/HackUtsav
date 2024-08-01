@@ -51,32 +51,51 @@ app.get("/HackUtsav/Registration", (req, res) => {
     res.render("new.ejs");
 });
 
-// REGISTRATION AND PAYMENT ROUTE
 app.post("/HackUtsav", async (req, res) => {
     try {
         console.log(req.body);  // Log the request body for debugging
 
-        const { email1, email2, contact1, contact2, upiPaymentId, members, interest, ...otherFields } = req.body;
+        const { name1, email1, contact1, name2, email2, contact2, name3, email3, contact3, upiPaymentId, members, interest, ...otherFields } = req.body;
 
         // Validate required fields
         if (!email1) {
             return res.status(400).send("Email1 is required");
         }
 
-        if (members == 2 && !email2) {
-            return res.status(400).send("Email2 is required for two members");
+        if (members == 2 && (!email2 || !contact2)) {
+            return res.status(400).send("Email2 and Contact2 are required for two members");
+        }
+
+        if (members == 3 && (!email3 || !contact3)) {
+            return res.status(400).send("Email3 and Contact3 are required for three members");
         }
 
         if (!interest) {
             return res.status(400).send("Area of Interest is required.");
         }
 
+        // Filter out empty fields for optional members
+        const memberData = {
+            member1: { name: name1, email: email1, contact: contact1 },
+            upiPaymentId,
+            members,
+            interest,
+            ...otherFields
+        };
+
+        if (members >= 2) {
+            memberData.member2 = { name: name2, email: email2, contact: contact2 };
+        }
+        if (members == 3) {
+            memberData.member3 = { name: name3, email: email3, contact: contact3 };
+        }
+
         // Check for duplicate unique fields
         const [existingRegisterByEmail1, existingRegisterByEmail2, existingRegisterByContact1, existingRegisterByContact2, existingRegisterByPaymentId] = await Promise.all([
-            Register.findOne({ email1 }),
-            email2 ? Register.findOne({ email2 }) : null,
-            Register.findOne({ contact1 }),
-            contact2 ? Register.findOne({ contact2 }) : null,
+            Register.findOne({ 'member1.email': email1 }),
+            email2 ? Register.findOne({ 'member2.email': email2 }) : null,
+            Register.findOne({ 'member1.contact': contact1 }),
+            contact2 ? Register.findOne({ 'member2.contact': contact2 }) : null,
             Register.findOne({ upiPaymentId })
         ]);
 
@@ -100,7 +119,9 @@ app.post("/HackUtsav", async (req, res) => {
             return res.status(400).send("UPI Payment ID is already used.");
         }
 
-        const newRegister = new Register({ email1, email2, contact1, contact2, upiPaymentId, members, interest, ...otherFields });
+        // Save the new registration data
+        const newRegister = new Register(memberData);
+
         await newRegister.save();
         res.status(200).send("Successfully registered!"); // Or redirect/render a success page
     } catch (error) {
