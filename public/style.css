@@ -169,58 +169,14 @@ video {
   z-index: 10;
 }
 
-#hack-utsav {
+#page1 h1 {
   font-size: 7.5vw;
   font-weight: 900;
   position: relative;
 }
 
-#date {
-  font-size: 2.5vw;
-  font-weight: 900;
-  position: relative;
-  white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 600px) {
-  #hack-utsav {
-    font-size: 10vw; 
-  }
-
-  #date {
-    font-size: 4vw; 
-  }
-}
-
-@media (max-width: 400px) {
-  #hack-utsav {
-    font-size: 12vw; 
-  }
-
-  #date {
-    font-size: 6vw;
-  }
-}
-
-#hack-utsav::before {
+#page1 h1::before {
   content: "HACK UTSAV";
-  position: absolute;
-  color: #95c11e;
-  top: -5px;
-  left: -5px;
-  filter: blur(5px);
-  /* -webkit-text-stroke: 1.5px #95c11e; */
-  /* z-index: -1;
-  */
-
-  z-index: -1;
-}
-
-#date::before {
-  content: "30/08/2024-31/08/2024";
   position: absolute;
   color: #000;
   top: -5px;
@@ -451,19 +407,12 @@ video {
   width: 220px;
   border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.card-container:hover .guest-card,
-.guest-link:hover .guest-card {
-  animation: enlarge 0.3s forwards;
-}
-
-@keyframes enlarge {
-  to {
-    transform: scale(1.1);
-  }
+.card-container:hover .guest-card {
+  transform: scale(1.05);
 }
 
 .guest-info {
@@ -523,6 +472,7 @@ video {
     font-size: 14px;
   }
 }
+
 
 
 /* Team Header */
