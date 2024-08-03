@@ -213,6 +213,9 @@ video {
   left: -5px;
   filter: blur(5px);
   /* -webkit-text-stroke: 1.5px #95c11e; */
+  /* z-index: -1;
+  */
+
   z-index: -1;
 }
 
