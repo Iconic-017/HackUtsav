@@ -6,7 +6,7 @@
     <title>Registration Successful</title>
     
     <style>
-        *{
+        * {
             background-color: black;
         }
         
@@ -15,15 +15,17 @@
             text-align: center;
             margin-top: 2rem;
             color: rgb(183, 219, 128);
-            z-index: 10;
+            z-index: 1000; /* Higher than confetti */
+            position: relative; /* Ensure z-index works */
         }
 
         p {
             justify-content: center;
             text-align: center;
-            color: white;
+            color: rgb(183, 219, 128);
             margin-top: 1rem;
-            z-index: 10;
+            z-index: 1000; /* Higher than confetti */
+            position: relative; /* Ensure z-index works */
         }
 
         #countdown {
