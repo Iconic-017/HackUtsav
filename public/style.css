@@ -630,6 +630,7 @@ video {
   background: linear-gradient(to left bottom, #28912E, #ACE022);
   padding: 10px 20px;
   box-sizing: border-box;
+  height: 200px;
   min-height: 80px; /* Set a minimum height for better appearance */
 }
 
@@ -717,7 +718,7 @@ video {
 
 #page3 #colon2 {
   left: 80%;
-  top: 90%;
+  top: 120%;
 }
 
 @media (max-width: 768px) {
@@ -738,7 +739,7 @@ video {
 
   #page3 #colon2 {
     left: 75%;
-    top: 85%; 
+    top: 100%; 
   }
 }
 
