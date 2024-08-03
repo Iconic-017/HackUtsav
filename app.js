@@ -123,7 +123,8 @@ app.post("/HackUtsav", async (req, res) => {
         const newRegister = new Register(memberData);
 
         await newRegister.save();
-        res.status(200).send("Successfully registered!"); // Or redirect/render a success page
+        // res.status(200).send("Successfully registered!"); // Or redirect/render a success page
+        res.status(200).render("success.ejs");
     } catch (error) {
         console.error("Error saving registration:", error);
         res.status(500).send("Error registering. Please try again.");

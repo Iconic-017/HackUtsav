@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    
+    <style>
+        * {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            justify-content: center;
+            text-align: center;
+            margin-top: 10rem;
+            color: rgb(183, 219, 128);
+            position: relative;
+            z-index: 10; /* Ensure the text is on top of the confetti */
+            animation: glow 1.5s infinite alternate;
+            font-size:50px; 
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ffff00;
+            }
+            to {
+                text-shadow: 0 0 20px #ffff00;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="head1">Registration Successful</h1>
+
+    <!-- Include the confetti script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    
+    <!-- Trigger the custom confetti effect on page load -->
+    <script>
+        var duration = 15 * 1000;
+        var animationEnd = Date.now() + duration;
+        var defaults = { 
+            startVelocity: 30, 
+            spread: 360, 
+            ticks: 60, 
+            zIndex: 5  // Lower z-index to ensure it appears behind the text
+        };
+
+        function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        var interval = setInterval(function() {
+            var timeLeft = animationEnd - Date.now();
+
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
+
+            var particleCount = 50 * (timeLeft / duration);
+            // since particles fall down, start a bit higher than random
+            confetti({ 
+                ...defaults, 
+                particleCount, 
+                origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } 
+            });
+            confetti({ 
+                ...defaults, 
+                particleCount, 
+                origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } 
+            });
+        }, 250);
+    </script>
+</body>
+</html>
