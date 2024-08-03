@@ -185,6 +185,17 @@ video {
   z-index: -1;
 }
 
+#page1 h3::before {
+  content: "30th August 2024 &nbsp; 24hr Hackathon";
+  position: absolute;
+  color: #000;
+  top: -5px;
+  left: -5px;
+  -webkit-text-stroke: 1.5px #95c11e;
+  z-index: -1;
+}
+
+
 #page1 h2 {
   font-size: 20px;
   font-weight: 800;
