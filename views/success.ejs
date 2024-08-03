@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <style>
+        .alert {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .alert-success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        
+    </style>
+    <script>
+        function redirectToHome() {
+            setTimeout(() => {
+                window.location.href = "/HackUtsav";
+            }, 5000); 
+        }
+
+        function clearForm() {
+            document.getElementById('registrationForm').reset();
+        }
+
+        window.onload = function() {
+            clearForm();
+            redirectToHome();
+        };
+    </script>
+</head>
+<body>
+    <div class="alert alert-success">
+        Registration successful!
+    </div>
+</body>
+</html>
