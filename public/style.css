@@ -178,7 +178,7 @@ video {
 #page1 h1::before {
   content: "HACK UTSAV";
   position: absolute;
-  color: #119f3a;
+  color: #95c11e;
   top: -5px;
   left: -5px;
   /* -webkit-text-stroke: 1.5px #95c11e; */
