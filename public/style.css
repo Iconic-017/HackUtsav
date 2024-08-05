@@ -631,11 +631,15 @@ video {
   transition: all ease 0.6s;
 }
 
+#card1-container a {
+  text-decoration: none;
+}
 .overlay h4 {
   color: black;
   font-size: 35px;
   font-weight: 700;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .overlay p {
@@ -648,6 +652,7 @@ video {
 .overlay p a i {
   color: #000;
   font-size: 2000;
+  text-decoration: none;
 }
 
 /* Responsive Design */
