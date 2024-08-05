@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const Register = require("./models/form.js");
 const ejsMate = require("ejs-mate");
+const nodemailer = require("nodemailer");
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -51,10 +52,31 @@ app.get("/HackUtsav/Registration", (req, res) => {
     res.render("new.ejs");
 });
 
+// Function to send registration email
+async function sendRegistrationEmail(member1Email) {
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        secure: true,
+        port: 465,
+        auth: {
+            user: process.env.MAIL,
+            pass: process.env.PASS ,
+        },
+    });
+
+    const mailOptions = {
+        from: process.env.MAIL,
+        to: member1Email,
+        subject: "Registration Successful",
+        text: "Thank you for registering! Your registration was successful.",
+    };
+
+    return transporter.sendMail(mailOptions);
+}
+
+// Handle registration form submission
 app.post("/HackUtsav", async (req, res) => {
     try {
-        console.log(req.body);  // Log the request body for debugging
-
         const { name1, email1, contact1, name2, email2, contact2, name3, email3, contact3, upiPaymentId, members, interest, ...otherFields } = req.body;
 
         // Validate required fields
@@ -74,7 +96,7 @@ app.post("/HackUtsav", async (req, res) => {
             return res.status(400).send("Area of Interest is required.");
         }
 
-        // Filter out empty fields for optional members
+        // Prepare member data
         const memberData = {
             member1: { name: name1, email: email1, contact: contact1 },
             upiPaymentId,
@@ -90,7 +112,7 @@ app.post("/HackUtsav", async (req, res) => {
             memberData.member3 = { name: name3, email: email3, contact: contact3 };
         }
 
-        // Check for duplicate unique fields
+        // Check for duplicate entries
         const [existingRegisterByEmail1, existingRegisterByEmail2, existingRegisterByContact1, existingRegisterByContact2, existingRegisterByPaymentId] = await Promise.all([
             Register.findOne({ 'member1.email': email1 }),
             email2 ? Register.findOne({ 'member2.email': email2 }) : null,
@@ -121,9 +143,20 @@ app.post("/HackUtsav", async (req, res) => {
 
         // Save the new registration data
         const newRegister = new Register(memberData);
-
         await newRegister.save();
-        res.status(200).send("Successfully registered!"); // Or redirect/render a success page
+
+        // Send the registration email to member1
+        try {
+            await sendRegistrationEmail(email1);
+            console.log("mail send successfully");
+        } catch (error) {
+            console.error("Error sending email:", error);
+            // Log error but don't fail the registration
+        }
+
+        // Render the success page
+        res.status(200).render("success.ejs");
+
     } catch (error) {
         console.error("Error saving registration:", error);
         res.status(500).send("Error registering. Please try again.");

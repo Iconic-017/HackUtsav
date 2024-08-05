@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    
+    <style>
+        * {
+            background-color: black;
+        }
+        
+        h1 {
+            justify-content: center;
+            text-align: center;
+            margin-top: 20rem;
+            color: rgb(183, 219, 128);
+            z-index: 1000; /* Higher than confetti */
+            position: relative; /* Ensure z-index works */
+        }
+
+        p {
+            justify-content: center;
+            text-align: center;
+            color: rgb(183, 219, 128);
+            margin-top: 20rem;
+            z-index: 1000; /* Higher than confetti */
+            position: relative; /* Ensure z-index works */
+        }
+
+        #countdown {
+            font-size: 2rem;
+            color: #ff6347; /* Tomato color */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="head1">Registration Successful</h1>
+
+    <p>You will be redirected in <span id="countdown">5</span> seconds...</p>
+
+    <!-- Include the confetti script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    
+    <!-- Trigger the custom confetti effect on page load -->
+    <script>
+        var count = 200;
+        var defaults = {
+          origin: { y: 0.7 }
+        };
+
+        function fire(particleRatio, opts) {
+          confetti({
+            ...defaults,
+            ...opts,
+            particleCount: Math.floor(count * particleRatio)
+          });
+        }
+
+        fire(0.25, {
+          spread: 26,
+          startVelocity: 55,
+        });
+        fire(0.2, {
+          spread: 60,
+        });
+        fire(0.35, {
+          spread: 100,
+          decay: 0.91,
+          scalar: 0.8
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 25,
+          decay: 0.92,
+          scalar: 1.2
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 45,
+        });
+
+        // Countdown timer and redirection logic
+        var countdownElement = document.getElementById('countdown');
+        var countdown = 5; // 5 seconds
+
+        var interval = setInterval(function() {
+            countdown--;
+            countdownElement.textContent = countdown;
+
+            if (countdown <= 0) {
+                clearInterval(interval);
+                window.location.href = "https://hackutsav.onrender.com/HackUtsav";
+            }
+        }, 1000); // Update every second
+    </script>
+</body>
+</html>
