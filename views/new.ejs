@@ -21,140 +21,162 @@
     <div class="main-navbar">
         <div class="navbar" id="nav">
             <img src="/images/clg_logo.png" alt="" />
-
+    
             <h4><a href="/HackUtsav" style="text-decoration: none;">Home</a></h4>
-
-            <h4><a href="#" class="contact-link" id="contact-button" style="text-decoration: none;">Contact</a></h4>
-
+            <!-- <h4><a href="#" class="contact-link" id="contact-button" style="text-decoration: none;">Contact</a></h4> -->
+            <h4><a href="#" id="query-button" style="text-decoration: none;">Query</a></h4> <!-- Query button -->
         </div>
     </div>
+    
+    <!-- Hidden query message box -->
+    <div id="query-message" class="query-message">
+        <p style="color: black;">If you have any queries, please call us at: <br>
+            <strong style=" color: #95c11e;">Mr. Haider</strong>
+             <strong style="color: red;"> <br>+91-9310336828</strong></p>
+             <strong style=" color: #95c11e;">Mr. Ayush</strong>
+             <strong style="color: red;"> <br>+91-7011114293</strong></p>
+        <span id="close-query" style="cursor: pointer; color: red;">&#10005; Close</span>
+    </div>
+    
 
-    <section id="form-section">
-        <div class="main-form">
-            <div class="login-box">
-                <form id="registrationForm" method="POST" action="/HackUtsav"
-                    onsubmit="return confirmSubmission(event)">
-                    <h2 id="form-header">Register Now!</h2>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="people"></ion-icon></span>
-                        <select name="members" id="members" required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                        <label for="members">Team Members: </label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
-                        <input type="text" name="teamname" required>
-                        <label for="teamname">Team Name </label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
-                        <input type="text" name="college" required>
-                        <label for="college">College Name</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
-                        <input type="text" name="collegeId" required>
-                        <label for="collegeId">College ID</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
-                        <input type="text" name="branch" required>
-                        <label for="branch">Branch</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
-                        <input type="text" id="interest" name="interest" required>
-                        <label for="interest">Area of Interest (AI/ML , Blockchain , etc.)</label>
-                    </div>
-                    
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
-                        <input type="text" name="name1" required>
-                        <label for="name1">Name of member 1</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" name="email1" required>
-                        <label for="email1">Email of member 1</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="call"></ion-icon></span>
-                        <input type="text" name="contact1" required pattern="\d{10}" title="Please enter exactly 10 digits">
-                        <label for="contact1">Contact Number of member 1</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
-                        <input type="text" name="name2" id="name2">
-                        <label for="name2">Name of member 2</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" name="email2" id="email2">
-                        <label for="email2">Email of member 2</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="call"></ion-icon></span>
-                        <input type="text" name="contact2" id="contact2">
-                        <label for="contact2">Contact number of member 2</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
-                        <input type="text" name="name3" id="name3">
-                        <label for="name3">Name of member 3</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" name="email3" id="email3">
-                        <label for="email3">Email of member 3</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="call"></ion-icon></span>
-                        <input type="text" name="contact3" id="contact3">
-                        <label for="contact3">Contact number of member 3</label>
-                    </div>
-
-                    <div class="upi-box">
-                        <p class="upi-para">Scan to pay: </p><br>
-                        <img class="upi-image" src="/images/UPI.png" alt="#">
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
-                        <input type="text" name="upiPaymentId" required>
-                        <label for="upiPaymentId">Enter your Transaction ID</label>
-                    </div>
-
-                    <button type="submit" class="submit">Submit</button>
-
-                </form>
+    <div>
+        <section id="form-section">
+            <div class="main-form">
+                <div class="login-box" style="margin-bottom: 10%;">
+                    <form id="registrationForm" method="POST" action="/HackUtsav" onsubmit="return confirmSubmission(event)">
+                        <h2 id="form-header">Register Now!</h2>
+        
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="people"></ion-icon></span>
+                            <select name="members" id="members" required onchange="toggleMemberFields()">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <label for="members">Team Members: </label>
+                        </div>
+    
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+                            <input type="text" name="teamname" required>
+                            <label for="teamname">Team Name </label>
+                        </div>
+    
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
+                            <input type="text" name="college" required>
+                            <label for="college">College Name</label>
+                        </div>
+    
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
+                            <input type="text" name="collegeId" required>
+                            <label for="collegeId">College ID</label>
+                        </div>
+    
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
+                            <input type="text" name="branch" required>
+                            <label for="branch">Branch</label>
+                        </div>
+    
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
+                            <input type="text" id="interest" name="interest" required>
+                            <label for="interest">Area of Interest (AI/ML , Blockchain , etc.)</label>
+                        </div>
+                        
+    
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+                            <input type="text" name="name1" required>
+                            <label for="name1">Name of member 1</label>
+                        </div>
+        
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="email" name="email1" required>
+                            <label for="email1">Email of member 1</label>
+                        </div>
+        
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="call"></ion-icon></span>
+                            <input type="text" name="contact1" required pattern="\d{10}" title="Please enter exactly 10 digits">
+                            <label for="contact1">Contact Number of member 1</label>
+                        </div>
+        
+                        <!-- Member 2 details -->
+                        <div class="member-field" id="member2-fields">
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+                                <input type="text" name="name2" id="name2">
+                                <label for="name2">Name of member 2</label>
+                            </div>
+        
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                                <input type="email" name="email2" id="email2">
+                                <label for="email2">Email of member 2</label>
+                            </div>
+        
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="call"></ion-icon></span>
+                                <input type="text" name="contact2" id="contact2">
+                                <label for="contact2">Contact number of member 2</label>
+                            </div>
+                        </div>
+        
+                        <!-- Member 3 details -->
+                        <div class="member-field" id="member3-fields">
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+                                <input type="text" name="name3" id="name3">
+                                <label for="name3">Name of member 3</label>
+                            </div>
+        
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                                <input type="email" name="email3" id="email3">
+                                <label for="email3">Email of member 3</label>
+                            </div>
+        
+                            <div class="input-box">
+                                <span class="icon"><ion-icon name="call"></ion-icon></span>
+                                <input type="text" name="contact3" id="contact3">
+                                <label for="contact3">Contact number of member 3</label>
+                            </div>
+                        </div>
+    
+                        <div class="upi-box">
+                            <p class="upi-para">Scan to pay: </p><br>
+                            <img class="upi-image" src="/images/UPI.png" alt="#">
+                        </div>
+        
+                        <div class="input-box">
+                            <span class="icon"><ion-icon name="chevron-forward-circle"></ion-icon></span>
+                            <input type="text" name="upiPaymentId" required>
+                            <label for="upiPaymentId">Enter your Transaction ID</label>
+                        </div>
+        
+                        <button type="submit" class="submit">Submit</button>
+    
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </section>
+    </div>
 
 
 
 
-    <footer id="footer">
+
+
+    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+
+<!-- <div style="height: 100%;"></div> -->
+
+    <!-- <footer id="footer">
         <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="" />
         <div id="f1">
             <img src="/images/logo final.jpg" />
@@ -205,7 +227,7 @@
                 </div>
             </h4>
         </div>
-    </footer>
+    </footer> -->
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -304,7 +326,74 @@
                 behavior: 'smooth'
             });
         });
+
+
+
+    function toggleMemberFields() {
+        const memberCount = document.getElementById('members').value;
+        const member2Fields = document.getElementById('member2-fields');
+        const member3Fields = document.getElementById('member3-fields');
+
+        if (memberCount == 1) {
+            member2Fields.style.display = 'none';
+            member3Fields.style.display = 'none';
+        } else if (memberCount == 2) {
+            member2Fields.style.display = 'block';
+            member3Fields.style.display = 'none';
+        } else {
+            member2Fields.style.display = 'block';
+            member3Fields.style.display = 'block';
+        }
+    }
+
+// Initialize form based on initial value
+document.addEventListener('DOMContentLoaded', toggleMemberFields);
+
+
+
+
+
+
     </script>
+
+
+
+
+
+<script>
+   document.getElementById('query-button').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+
+    const queryMessage = document.getElementById('query-message');
+
+    // Toggle the display of the query message
+    if (queryMessage.style.display === 'block') {
+        queryMessage.style.display = 'none';
+    } else {
+        // Position the message box below the "Query" button
+        const rect = this.getBoundingClientRect();
+        queryMessage.style.top = rect.bottom + window.scrollY + 'px';
+        queryMessage.style.left = rect.left + window.scrollX + 'px';
+        queryMessage.style.display = 'block';
+    }
+});
+
+document.getElementById('close-query').addEventListener('click', function() {
+    document.getElementById('query-message').style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    const queryMessage = document.getElementById('query-message');
+    const queryButton = document.getElementById('query-button');
+    if (event.target !== queryMessage && !queryMessage.contains(event.target) && event.target !== queryButton) {
+        queryMessage.style.display = 'none';
+    }
+});
+
+</script>
+
+
+
 </body>
 
 </html>

@@ -1422,9 +1422,6 @@ video {
   transition: color 0.3s; /* Smooth color transition on hover */
 }
 
-.navbar a:hover {
-  color: #28912E; /* Adjust hover color as needed */
-}
 
 @media (max-width: 768px) {
   .navbar {
@@ -1439,4 +1436,43 @@ video {
   .navbar a {
       font-size: 14px; /* Adjust font size for small screens */
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+.query-message {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #fff; /* White background */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  z-index: 1000;
+  width: 250px;
+  font-size: 14px;
+  color: #333; /* Dark text color */
+  left: 0; /* Align to the left side of the query button */
+  transform: translateX(-100%); /* Ensure it appears to the left of the button */
+}
+
+.query-message:before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Adjust based on padding */
+  left: calc(100% - 35px); /* Position the arrow closer to the right side */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  z-index: -1;
 }
