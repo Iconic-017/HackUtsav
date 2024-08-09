@@ -1204,7 +1204,7 @@ video {
 
 /* Styling for registration form: */
 .registration-body {
-  background: url('registration.jpg') no-repeat center center;
+  background: url(' https://res.cloudinary.com/dd6kfzjlh/image/upload/v1723226648/registration_hthdrn.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
 }
