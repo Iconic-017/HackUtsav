@@ -606,14 +606,14 @@ video {
 }
 
 /* Specific Background Images */
-#card1 { background-image: url("/images/sandu.jpg"); }
-#card2 { background-image: url("/images/haidu.jpg"); }
-#card3 { background-image: url("/images/surya.jpg"); }
-#card4 { background-image: url("/images/me.jpg"); }
-#card5 { background-image: url("/images/tyagi.jpg"); }
-#card6 { background-image: url("/images/pun.jpg"); }
-#card7 { background-image: url("/images/rit.jpg"); }
-#card8 { background-image: url("/images/naz.jpg"); }
+#card1 { background-image: url("https://res.cloudinary.com/dd6kfzjlh/image/upload/v1723180716/sandu_xgqbhz.jpg"); }
+#card2 { background-image: url("https://res.cloudinary.com/dd6kfzjlh/image/upload/v1723180708/haidu_bwizwn.jpg"); }
+#card3 { background-image: url("https://res.cloudinary.com/dd6kfzjlh/image/upload/v1723180717/surya_guheym.jpg"); }
+#card4 { background-image: url("https://res.cloudinary.com/dd6kfzjlh/image/upload/v1723225842/me_oei3qh.jpg"); }
+#card5 { background-image: url("https://res.cloudinary.com/dd6kfzjlh/image/upload/v1723180717/tyagi_nbvfvl.jpg"); }
+#card6 { background-image: url("https://res.cloudinary.com/dd6kfzjlh/image/upload/v1723180713/pun_awzlp7.jpg"); }
+#card7 { background-image: url("https://res.cloudinary.com/dd6kfzjlh/image/upload/v1723180714/rit_uwkwzs.jpg"); }
+#card8 { background-image: url("https://res.cloudinary.com/dd6kfzjlh/image/upload/v1723180713/naz_a2vqnc.jpg"); }
 
 /* Card Hover Effect */
 .card:hover .overlay {
