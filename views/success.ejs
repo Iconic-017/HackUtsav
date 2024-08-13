@@ -37,7 +37,7 @@
 <body>
     <h1 class="head1">Registration Successful</h1>
 
-    <p>You will be redirected in <span id="countdown">5</span> seconds...</p>
+    <!-- <p>You will be redirected in <span id="countdown">5</span> seconds...</p> -->
 
     <!-- Include the confetti script -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
@@ -80,19 +80,19 @@
           startVelocity: 45,
         });
 
-        // Countdown timer and redirection logic
-        var countdownElement = document.getElementById('countdown');
-        var countdown = 5; // 5 seconds
+        
+        // var countdownElement = document.getElementById('countdown');
+        // var countdown = 5;
 
-        var interval = setInterval(function() {
-            countdown--;
-            countdownElement.textContent = countdown;
+        // var interval = setInterval(function() {
+        //     countdown--;
+        //     countdownElement.textContent = countdown;
 
-            if (countdown <= 0) {
-                clearInterval(interval);
-                window.location.href = "https://hackutsav.onrender.com/HackUtsav";
-            }
-        }, 1000); // Update every second
+        //     if (countdown <= 0) {
+        //         clearInterval(interval);
+        //         window.location.href = "https://hackutsav.onrender.com/HackUtsav";
+        //     }
+        // }, 1000);
     </script>
 </body>
 </html>
