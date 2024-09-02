@@ -45,14 +45,14 @@ app.listen(port, () => {
 
 // MAIN ROUTE
 app.get("/HackUtsav", (req, res) => {
-    // res.render("index.ejs");
-    res.render("new.ejs");
+    res.render("index.ejs");
+    // res.render("new.ejs");
 });
 
 
-// app.get("/HackUtsav/Registration", (req, res) => {
-//     res.render("new.ejs");
-// });
+app.get("/HackUtsav/Registration", (req, res) => {
+    res.render("new.ejs");
+});
 
 // Function to send registration email
 async function sendRegistrationEmail(member1Email) {
